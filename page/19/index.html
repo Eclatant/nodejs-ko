@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Node.js 한국 커뮤니티</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Node.js 한국 커뮤니티">
+<meta property="og:url" content="https://nodejs.github.io/nodejs-ko/page/19/index.html">
+<meta property="og:site_name" content="Node.js 한국 커뮤니티">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js 한국 커뮤니티">
+<meta name="twitter:creator" content="@nodejs_ko">
+  
+    <link rel="alternate" href="/nodejs-ko/atom.xml" title="Node.js 한국 커뮤니티" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/nodejs-ko/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/nodejs-ko/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/nodejs-ko/" id="logo">Node.js 한국 커뮤니티</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <span id="subtitle">
+            <a href="https://nodejs.org" target="_blank">Node.js</a> 관련 소식, 정보, 글 등을 한국어로 번역해서 공유합니다.
+          </span>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/nodejs-ko/">Home</a>
+        
+          <a class="main-nav-link" href="/nodejs-ko/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/nodejs-ko/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nodejs.github.io/nodejs-ko"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-io-js-v2.0-released" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/articles/2015/05/06/io-js-v2.0-released/" class="article-date">
+    <time datetime="2015-05-06T00:00:00.000Z" itemprop="datePublished">2015-05-06</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/articles/">articles</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/articles/2015/05/06/io-js-v2.0-released/">io.js의 v2.0이 나왔습니다.</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>Yosuke FURUKAWA</strong></li>
+    <li>
+      원문: <strong><a href="http://yosuke-furukawa.hatenablog.com/entry/2015/05/06/170034" taret="_blank">
+        io.js の v2.0 が出ました。
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/asbubam" target="_blank">asbubam</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+https://hexi.pics/resize/w/462/h/462/e03baa40377a8e562cb376199c6e3721.png
+さてさて、久しぶりのio.js エントリですが、この度 io.js の v2.0 が出ました。
+変更点をかいつまんで説明しましょう。書いてたら長くなってしまったので、サマリだけでいい人は最後のまとめを読むだけでいいと思います。
+
+io.js は変化がものすごく激しく、v1.0 から v2.0 が入るまでに色んな機能が入っているんですが、知らない人も多いかと思います。
+
+今回は v2.0 の単なる変更点だけじゃなくて、 v1.0 から今までで入った機能をサマリつつ伝えていこうかと思います。
+-->
+<p><img src="https://hexi.pics/resize/w/462/h/462/e03baa40377a8e562cb376199c6e3721.png" alt="io.js logo"></p>
+<p>참 오래간만의 io.js 항목의 글입니다만, 최근에 io.js의 v2.0이 나왔습니다.
+변경사항을 간추려서 설명하겠습니다. 쓰다 보니 길어졌기 때문에, 요약만 읽고 싶은 분은 마지막의 정리만 읽으셔도 됩니다.</p>
+<p>io.js는 변화가 워낙 많은 편이라, v1.0에서 v2.0으로 되면서 여러 기능이 추가되고 있는데, 모르는 사람도 많지 않을까? 하고 생각합니다. </p>
+<p>이번에는 v2.0의 단순한 변경 사항뿐만 아니라, v1.0부터 지금까지 추가된 기능을 요약해 소개해보려고 합니다.</p>
+<!--
+Stream Simpler Construction (v1.2.0〜)
+
+Stream の作成が簡単になりました。今までStreamを作るためには、目的のStreamを継承して、TransformStreamであれば _transform のようなメソッドを拡張して実現する必要がありました。
+
+これをより簡単にしたものが through2 に代表されるヘルパライブラリでしたが、簡単にいえばこの through2 がなくても io.js では Stream を作るのが簡単にできるようになりました。
+
+StreamのTransformに対して、transformやflushを取ることができ、これを使うとわざわざ継承をしなくてもTransform Streamを作ることが可能です。下記のようになりました。
+-->
+<h2 id="Stream-Simpler-Construction-v1-2-0"><a href="#Stream-Simpler-Construction-v1-2-0" class="headerlink" title="Stream Simpler Construction (v1.2.0~)"></a>Stream Simpler Construction (v1.2.0~)</h2><p>Stream의 작성이 간단해졌습니다. 지금까지 Stream을 만들기 위해서는, 목적의 Stream을 상속해서 TransformStream이라면 _transform과 같은 메소드를 확장해서 구현할 필요가 있었습니다. </p>
+<p>이를 더 간단히 하기위해 through2로 대표되는 헬퍼 라이브러리가 있었지만, 단순하게 설명하면 이 through2가 없어도 io.js에서는 Stream 생성을 간단하게 할 수 있게 되었습니다.</p>
+<p>Stream의 Transform에 대해서, transform이나 flush를 얻을 수 있고, 이것을 사용하면 일부러 상속하지 않아도 Transform Stream을 만드는 것이 가능합니다. 아래와 같이 변경되었습니다.</p>
+<!--
+before
+
+var Transform = require('stream').Transform;
+var util = require('util');
+
+util.inherits(MyTransform, Transform);
+
+function MyTransform(opts){
+    Transform.call(this, opts);
+}
+
+MyTransform.prototype._transform = function(chunk, encoding, callback){
+  // ここで 変換して
+  ...
+  // pushする
+  this.push(chunk);
+};
+
+MyTransform.prototype._flush = function(done){
+  // 最後に何かしたければここで flush する
+};
+after
+
+var transform = new stream.Transform({
+  transform: function(chunk, encoding, next) {
+    // ここで 変換して
+
+    ...
+    // pushする
+    this.push(chunk);
+  },
+  flush: function(done) {
+    // 最後に何かしたければここで flush する
+  }
+});
+-->
+<p><strong>before</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">javascript</div><div class="line"><span class="keyword">var</span> Transform = <span class="built_in">require</span>(<span class="string">'stream'</span>).Transform;</div><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"></div><div class="line">util.inherits(MyTransform, Transform);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyTransform</span>(<span class="params">opts</span>)</span>&#123;</div><div class="line">    Transform.call(<span class="keyword">this</span>, opts);</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyTransform.prototype._transform = <span class="function"><span class="keyword">function</span>(<span class="params">chunk, encoding, callback</span>)</span>&#123;</div><div class="line">  <span class="comment">// 여기에서 변환하고</span></div><div class="line">  ...</div><div class="line">  <span class="comment">// push 합니다.</span></div><div class="line">  <span class="keyword">this</span>.push(chunk);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">MyTransform.prototype._flush = <span class="function"><span class="keyword">function</span>(<span class="params">done</span>)</span>&#123;</div><div class="line">  <span class="comment">// 마지막에 무언가 하고 싶다면 여기서 flush 합니다.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>after</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transform = <span class="keyword">new</span> stream.Transform(&#123;</div><div class="line">  <span class="attr">transform</span>: <span class="function"><span class="keyword">function</span>(<span class="params">chunk, encoding, next</span>) </span>&#123;</div><div class="line">    <span class="comment">// 여기에서 변환하고</span></div><div class="line">    ...</div><div class="line">    <span class="comment">// push 합니다.</span></div><div class="line">    <span class="keyword">this</span>.push(chunk);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">flush</span>: <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="comment">// 마지막에 무언가 하고 싶다면 여기서 flush 합니다.</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<!--
+ここでは Transform Stream で例を示しましたが、 Readable や Writable も簡単に作れるようになりました。
+詳しくはコチラを見てください。
+https://iojs.org/api/stream.html#stream_simplified_constructor_api
+-->
+<p>여기서는 Transform Stream만 설명했지만, Readable이나 Writable도 간단히 생성할 수 있게 되었습니다.</p>
+<p>자세한 내용은 이 링크를 참조하세요.
+<a href="https://iojs.org/api/stream.html#stream_simplified_constructor_api" target="_blank" rel="external">https://iojs.org/api/stream.html#stream_simplified_constructor_api</a></p>
+<!--
+LTTNG サポート (v1.2.0〜)
+
+HTTP のリクエストやサーバのレスポンス、GCの実行といった時にカーネルのレベルで何が起きているかを追うための機能が追加されています。今までの Node.js ではこれを行うのに Dtrace を使っていましたが、LinuxのDtrace実装は若く、全てが実装されているわけではありませんでした。結果として、 Joyentが提供している SmartOS等のSolarisをベースにしたUnix環境でしかNode.jsでDtraceを使うのはサポートされていませんでした。
+
+これからは Linux カーネルでも標準でトレース可能な LTTNG も使えるようになりました。
+詳しくはここを見てもらえるといいかと。
+
+Node LTTNG
+-->
+<h2 id="LTTNG-서포트-v1-2-0"><a href="#LTTNG-서포트-v1-2-0" class="headerlink" title="LTTNG 서포트 (v1.2.0~)"></a>LTTNG 서포트 (v1.2.0~)</h2><p>HTTP의 Request 혹은 서버의 Response, GC가 실행될 때 커널레벨에서 어떤 일이 벌어지는지를 추적하기 위한 기능이 추가되었습니다. 지금까지의 Node.js에서는 이것을 실행하기 위해서 Dtrace를 사용해 왔습니다만, Linux의 Dtrace 구현은 미숙해서, 모두 구현되어 있는 것이 아니었습니다. 결과적으로, Joyent가 제공하고 있는 SmartOS 같은 Solaris를 기반으로 한 Unix 환경에서만 Node.js가 Dtrace를 사용할 수 있도록 지원하고 있었습니다.</p>
+<p>이제는 Linux 커널에서도 표준으로 트레이스가 가능한 LTTNG도 사용할 수 있게 되었습니다.</p>
+<p>자세한 설명은 아래 링크를 보세요.</p>
+<p><a href="http://nearform.github.io/tracing-node-lttng-nodejsdublin/" target="_blank" rel="external">Node LTTNG</a></p>
+<p><img src="http://nearform.github.io/tracing-node-lttng-nodejsdublin/pictures/demo.gif" alt=""></p>
+<!--
+Promise の unhandledRejection / rejectionHandled イベント (v1.4.1〜)
+
+Promise の catch を忘れた時に、 キャッチされていない例外として、 unhandledRejection と rejected 済みでもう呼ばれることがない例外を検出するための仕組みとして、 新しくrejectionHandledイベントが追加されました。
+
+こちら、 azuさんの資料が詳しいので抜粋させてもらいます。
+
+var bluebird = require("bluebird");
+// unhandledRejection catchされていない例外
+process.on("unhandledRejection", function (reason, promise) {
+    console.log("unhandledRejection");
+});
+
+var resolved = bluebird.resolve();
+resolved.then(function () {
+    throw new Error("Yay!");
+});
+var Promise = require("bluebird");
+process.on("rejectionHandled", function (promise) {
+    console.log("rejectionHandled");
+});
+var rejected = Promise.reject(new Error("Error Promise"));
+setTimeout(function () {
+    rejected.catch(function () {
+        // rejected済みのpromiseに`catch`する
+    });
+},100);
+Promise Error Handling
+-->
+<h2 id="Promise의-unhandleRejection-rejectionHandled-이벤트-v1-4-1"><a href="#Promise의-unhandleRejection-rejectionHandled-이벤트-v1-4-1" class="headerlink" title="Promise의 unhandleRejection / rejectionHandled 이벤트 (v1.4.1~)"></a>Promise의 unhandleRejection / rejectionHandled 이벤트 (v1.4.1~)</h2><p>Promise에서 catch를 빠트렸을 때 포착되지 않는 예외를 나타내는 unhandleRejection, rejected로 인해 더이상 catch에 도달하지 않는 예외를 검출하기 위한 rejectionHandled 이벤트가 새롭게 추가되었습니다.</p>
+<p>여기 잘 설명된 azu 님의 예제를 발췌하도록 하겠습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bluebird = <span class="built_in">require</span>(<span class="string">"bluebird"</span>);</div><div class="line"><span class="comment">// unhandledRejection catch되지 않은 예외</span></div><div class="line">process.on(<span class="string">"unhandledRejection"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">reason, promise</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"unhandledRejection"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> resolved = bluebird.resolve();</div><div class="line">resolved.then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Yay!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">"bluebird"</span>);</div><div class="line">process.on(<span class="string">"rejectionHandled"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">promise</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"rejectionHandled"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">var</span> rejected = <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Error Promise"</span>));</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    rejected.catch(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// rejected된 promise에 'catch' 실행</span></div><div class="line">    &#125;);</div><div class="line">&#125;,<span class="number">100</span>);</div></pre></td></tr></table></figure>
+<p><a href="http://azu.github.io/slide/error-handling/promise-error-handling.html" target="_blank" rel="external">Promise Error Handling</a></p>
+<!--
+Buffer に indexOf メソッドが追加されました。 (v1.5.0 〜)
+
+Buffer に対して indexOf メソッドを使えるようになりました。これまでは 一旦 String にしたりしてから、中身の文字列を検索する必要がありましたが、その必要がなくなりました。
+
+before
+
+var fs = require('fs');
+
+// ./foo.txt => yosuke furukawa
+fs.readFile(__dirname + '/foo.txt', function(err, buf){
+  var str = buf.toString();
+  console.log(str.indexOf('furukawa')); // 7
+});
+after
+
+var fs = require('fs');
+
+// ./foo.txt => yosuke furukawa
+fs.readFile(__dirname + '/foo.txt', function(err, buf){
+  console.log(buf.indexOf('furukawa')); // 7
+});
+
+詳しくはコチラ。
+
+https://iojs.org/api/buffer.html#buffer_buf_indexof_value_byteoffset
+-->
+<p>Buffer에 indexOf 메소드가 추가되었습니다. (v1.5.0 ~)</p>
+<p>Buffer에 대해 indexOf 메소드를 사용할 수 있게 되었습니다. 지금까지는 일단 String으로 변환하는 등의 방법을 통해, 내용의 문자열을 검색할 필요가 있었지만, 그럴 필요가 없게 되었습니다. </p>
+<p><strong>before</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// ./foo.txt =&gt; yosuke furukawa</span></div><div class="line">fs.readFile(__dirname + <span class="string">'/foo.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, buf</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> str = buf.toString();</div><div class="line">  <span class="built_in">console</span>.log(str.indexOf(<span class="string">'furukawa'</span>)); <span class="comment">// 7</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>after</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// ./foo.txt =&gt; yosuke furukawa</span></div><div class="line">fs.readFile(__dirname + <span class="string">'/foo.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, buf</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(buf.indexOf(<span class="string">'furukawa'</span>)); <span class="comment">// 7</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>자세한 설명은 여기를 참조하세요.</p>
+<p><a href="https://iojs.org/api/buffer.html#buffer_buf_indexof_value_byteoffset" target="_blank" rel="external">https://iojs.org/api/buffer.html#buffer_buf_indexof_value_byteoffset</a></p>
+<!--
+node のコマンドに --require オプションで preload モジュールを渡せるようになりました。 (v1.6.0〜)
+
+$ node --require ./a.js b.js
+事前にpreloadしておきたい場合に使えます。
+-->
+<h2 id="node의-커맨드에-–require-옵션으로-preload-모듈을-넘길-수-있게-되었습니다-v1-6-0"><a href="#node의-커맨드에-–require-옵션으로-preload-모듈을-넘길-수-있게-되었습니다-v1-6-0" class="headerlink" title="node의 커맨드에 –require 옵션으로 preload 모듈을 넘길 수 있게 되었습니다. (v1.6.0~)"></a>node의 커맨드에 –require 옵션으로 preload 모듈을 넘길 수 있게 되었습니다. (v1.6.0~)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node --require ./a.js b.js</div></pre></td></tr></table></figure>
+<p>사전에 preload해놓고 싶은 경우 사용할 수 있습니다.</p>
+<!--
+process.nextTick に複数の引数を渡せるようになりました。 (v1.8.0〜)
+
+var obj = {};
+
+process.nextTick(function(a, b) {
+  assert.equal(a, 42);
+  assert.equal(b, obj);
+}, 42, obj);
+この変更によって、process.nextTick の callback に任意の引数を渡すことができるようになりました。
+APIが setTimeoutやsetIntervalと似るようになりました。
+-->
+<h2 id="process-nextTick에-여러-개의-매개변수를-넘길-수-있게-되었습니다-v1-8-0"><a href="#process-nextTick에-여러-개의-매개변수를-넘길-수-있게-되었습니다-v1-8-0" class="headerlink" title="process.nextTick에 여러 개의 매개변수를 넘길 수 있게 되었습니다. (v1.8.0~)"></a>process.nextTick에 여러 개의 매개변수를 넘길 수 있게 되었습니다. (v1.8.0~)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"></div><div class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  assert.equal(a, <span class="number">42</span>);</div><div class="line">  assert.equal(b, obj);</div><div class="line">&#125;, <span class="number">42</span>, obj);</div></pre></td></tr></table></figure>
+<p>이 변경으로 인해, process.nextTick의 callback에 임의의 매개변수를 전달할 수 있게 되었습니다. API가 setTimeout과 setInterval과 비슷하게 되었습니다.</p>
+<!--
+REPL に history save 機能が追加 (v2.0〜)
+
+REPL の magic mode と呼ばれる機能が追加されています。これは、環境引数NODE_REPL_HISTORY_FILEを指定することでREPLを終了させても、次回の起動時に自分が実行したreplの内容を記憶してくれる機能です。いわゆる、 REPL の history save 機能ですね。
+
+$ NODE_REPL_HISTORY_FILE=~/.node_history iojs
+> var fs = require('fs');
+> fs.readFile;
+# Ctrl-D
+
+
+$ NODE_REPL_HISTORY_FILE=~/.node_history iojs
+> # push up button
+> fs.readFile;
+これは NODE_REPL_HISTORY_FILEを指定しないといけなくて、必ず有効にはなりません。
+僕は .zshrc に以下のように書くことで対応しています。
+
+# iojs
+alias iojs-repl="NODE_REPL_HISTORY_SIZE=Infinity NODE_REPL_HISTORY_FILE=~/.node_history iojs"
+こうするとiojs-replで実行するときにはhistoryが有効になります。
+
+詳しくはコチラ
+https://iojs.org/api/repl.html#repl_repl
+-->
+<h2 id="REPL에-history-저장기능이-추가-v2-0"><a href="#REPL에-history-저장기능이-추가-v2-0" class="headerlink" title="REPL에 history 저장기능이 추가 (v2.0~)"></a>REPL에 history 저장기능이 추가 (v2.0~)</h2><p>REPL의 magic mode라고 불리는 기능이 추가되어 있습니다. 이는 환경변수 NODE_REPL_HISTORY_FILE을 지정하는 것으로 REPL을 종료하더라도 다음 실행 시에 자신이 실행한 REPL의 내용을 기억해주는 기능입니다. 이른바 REPL의 history 저장 기능입니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ NODE_REPL_HISTORY_FILE=~/.node_history iojs</div><div class="line">&gt; var fs = require(<span class="string">'fs'</span>);</div><div class="line">&gt; fs.readFile;</div><div class="line"><span class="comment"># Ctrl-D</span></div><div class="line"></div><div class="line"></div><div class="line">$ NODE_REPL_HISTORY_FILE=~/.node_history iojs</div><div class="line">&gt; <span class="comment"># push up button</span></div><div class="line">&gt; fs.readFile;</div></pre></td></tr></table></figure>
+<p>이는 NODE_REPL_HISTORY_FILE을 지정하지 않으면 절대 적용되지 않습니다.
+저는 .zshrc에 다음과 같이 설정하는 것으로 대응하고 있습니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># iojs</span></div><div class="line"><span class="built_in">alias</span> iojs-repl=<span class="string">"NODE_REPL_HISTORY_SIZE=Infinity NODE_REPL_HISTORY_FILE=~/.node_history iojs"</span></div></pre></td></tr></table></figure>
+<p>이렇게 하면 iojs-repl로 실행할 경우에는 히스토리가 적용됩니다.</p>
+<p>자세한 설명은 여기를 참조하세요.
+<a href="https://iojs.org/api/repl.html#repl_repl" target="_blank" rel="external">https://iojs.org/api/repl.html#repl_repl</a></p>
+<!--
+ES6でデフォルトで使える構文が追加 (v2.0〜)
+
+僕が少し前に作ったiojsの新機能紹介リポジトリにも書きましたが、日本語で説明を加えていきます。
+
+class
+
+クラスがデフォルトで使えるようになりました。
+
+// strict mode needed
+'use strict';
+
+class Animal {
+  constructor(name) {
+    this.name = name
+  }
+
+  say() {
+    // unimplemented
+  }
+}
+
+class Cat extends Animal {
+  say() {
+    console.log(`${this.name} < meow`);
+  }
+}
+
+var cat = new Cat('Mike');
+cat.say(); // Mike < meow
+これはかなり重要で、 io.js v2.0 を使っている分には util.inherits のような継承のためのヘルパメソッドは不要になるし、ビルドインクラスを継承するのにも使えます。
+-->
+<h2 id="ES6에서-기본적으로-사용할-수-있는-구문이-추가-v2-0"><a href="#ES6에서-기본적으로-사용할-수-있는-구문이-추가-v2-0" class="headerlink" title="ES6에서 기본적으로 사용할 수 있는 구문이 추가(v2.0~)"></a>ES6에서 기본적으로 사용할 수 있는 구문이 추가(v2.0~)</h2><p>제가 좀 전에 만든 <a href="https://github.com/yosuke-furukawa/iojs-new-features" target="_blank" rel="external">iojs의 새 기능 소개 저장소</a>에도 설명했지만, 일본어로 설명을 추가합니다.</p>
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><p>class가 기본적으로 사용할 수 있게 되었습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// strict mode needed</span></div><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  say() &#123;</div><div class="line">    <span class="comment">// unimplemented</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">  say() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> &lt; meow`</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(<span class="string">'Mike'</span>);</div><div class="line">cat.say(); <span class="comment">// Mike &lt; meow</span></div></pre></td></tr></table></figure>
+<p>이는 상당히 중요한데, io.js v2.0을 사용하는 데에는 util.inherits와 같은 상속의 헬퍼 메소드가 불필요하게 되고, 빌트인 클래스를 상속할 때도 사용 가능합니다.</p>
+<!--
+enhanced object literals (v2.0〜)
+
+Object のリテラルに拡張が加わりました。 以下のように key と value が一緒の時は省略して記述することができるようになります。
+
+'use strict';
+// class
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+ getInfo() {
+    let name = this.name;
+    let age = this.age;
+    let nextAge = this.age + 1;
+    // enhanced object literal
+    return {
+      name,
+      age,
+      nextAge
+    };
+  }
+}
+
+var bob = new Person('bob', 15);
+
+console.log(bob.getInfo()); // { name: 'bob', age: 15, nextAge: 16 }
+-->
+<h2 id="enhanced-object-literals-v2-0"><a href="#enhanced-object-literals-v2-0" class="headerlink" title="enhanced object literals (v2.0~)"></a>enhanced object literals (v2.0~)</h2><p>Object 리터럴 확장을 추가했습니다. 아래와 같이 key와 value의 변수명이 같을 때에는 간단히 작성할 수 있게 되었습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="comment">// class</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name, age) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">    <span class="keyword">this</span>.age = age</div><div class="line">  &#125;</div><div class="line"> getInfo() &#123;</div><div class="line">    <span class="keyword">let</span> name = <span class="keyword">this</span>.name;</div><div class="line">    <span class="keyword">let</span> age = <span class="keyword">this</span>.age;</div><div class="line">    <span class="keyword">let</span> nextAge = <span class="keyword">this</span>.age + <span class="number">1</span>;</div><div class="line">    <span class="comment">// enhanced object literal</span></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      name,</div><div class="line">      age,</div><div class="line">      nextAge</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bob = <span class="keyword">new</span> Person(<span class="string">'bob'</span>, <span class="number">15</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(bob.getInfo()); <span class="comment">// &#123; name: 'bob', age: 15, nextAge: 16 &#125;</span></div></pre></td></tr></table></figure>
+<!--
+Rest パラメータが --harmony-rest-parameters オプション付きで有効になりました。
+
+harmony option 付きで Rest パラメータが追加されました。
+
+// Rest parameters
+function max(...args) {
+  // rest parameter is not Array-like object, that is just array.
+  console.log(Array.isArray(args))  // true
+  console.log(args.length)          // 6
+
+  var max = args.reduce(function(max, n) { 
+    return n > max ? n : max;
+  });
+  return max;
+}
+
+var maxNum = max(5, 15, 10, 1, 4, 5);
+console.log(maxNum); // 15
+
+実行するには下記のようにします。
+
+$ iojs --harmony-rest-parameters es6/rest_params/rest.js
+-->
+<h2 id="Rest-매개변수가-–harmony-rest-parameters-옵션을-통해-사용할-수-있게-되었습니다"><a href="#Rest-매개변수가-–harmony-rest-parameters-옵션을-통해-사용할-수-있게-되었습니다" class="headerlink" title="Rest 매개변수가 –harmony-rest-parameters 옵션을 통해 사용할 수 있게 되었습니다."></a>Rest 매개변수가 –harmony-rest-parameters 옵션을 통해 사용할 수 있게 되었습니다.</h2><p>harmony option에 Rest 매개변수가 추가되었습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Rest parameters</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">max</span>(<span class="params">...args</span>) </span>&#123;</div><div class="line">  <span class="comment">// rest parameter is not Array-like object, that is just array.</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(args))  <span class="comment">// true</span></div><div class="line">  <span class="built_in">console</span>.log(args.length)          <span class="comment">// 6</span></div><div class="line"></div><div class="line">  <span class="keyword">var</span> max = args.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">max, n</span>) </span>&#123; </div><div class="line">    <span class="keyword">return</span> n &gt; max ? n : max;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> max;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> maxNum = max(<span class="number">5</span>, <span class="number">15</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>);</div><div class="line"><span class="built_in">console</span>.log(maxNum); <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<p>실행하기 위해서는 아래와 같이 합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iojs --harmony-rest-parameters es6/rest_params/rest.js</div></pre></td></tr></table></figure>
+<!--
+Computed property names が --harmony-computed-property-names オプション付きで有効になりました。
+
+harmony オプション付きで、Computed property names が使えるようになりました。
+
+var i = 0;
+var a = {
+  ["foo" + ++i]: i,
+  ["foo" + ++i]: i,
+  ["foo" + ++i]: i
+};
+
+console.log(a.foo1); // 1
+console.log(a.foo2); // 2
+console.log(a.foo3); // 3
+
+var param = 'size';
+var config = {
+  [param]: 12,
+  ["mobile" + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+
+console.log(config);
+以下のように実行します。
+
+$ iojs --harmony-computed-property-names es6/computed_property/computedProps.js
+-->
+<h2 id="Computed-property-names가-–harmony-computed-property-names-옵션을-통해-사용할-수-있게-되었습니다"><a href="#Computed-property-names가-–harmony-computed-property-names-옵션을-통해-사용할-수-있게-되었습니다" class="headerlink" title="Computed property names가 –harmony-computed-property-names 옵션을 통해 사용할 수 있게 되었습니다."></a>Computed property names가 –harmony-computed-property-names 옵션을 통해 사용할 수 있게 되었습니다.</h2><p>harmony 옵션에 Computed property names를 사용할 수 있게 되었습니다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">  [<span class="string">"foo"</span> + ++i]: i,</div><div class="line">  [<span class="string">"foo"</span> + ++i]: i,</div><div class="line">  [<span class="string">"foo"</span> + ++i]: i</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.foo1); <span class="comment">// 1</span></div><div class="line"><span class="built_in">console</span>.log(a.foo2); <span class="comment">// 2</span></div><div class="line"><span class="built_in">console</span>.log(a.foo3); <span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> param = <span class="string">'size'</span>;</div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">  [param]: <span class="number">12</span>,</div><div class="line">  [<span class="string">"mobile"</span> + param.charAt(<span class="number">0</span>).toUpperCase() + param.slice(<span class="number">1</span>)]: <span class="number">4</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(config);</div></pre></td></tr></table></figure>
+<p>아래와 같이 실행합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ iojs --harmony-computed-property-names es6/computed_property/computedProps.js</div></pre></td></tr></table></figure>
+<!--
+Strong mode がサポートされました。 (v2.0〜)
+
+今、 Google の v8 チームは色んな試みをしているのですが、 StrongScriptと呼ばれる試みをしています。
+これは、JavaScriptの自由度の高い構文 (var, arguments, ==, delete, for-in 等)をなるべく deprecated にして、ES6 を含めた最新の構文(let, ...args, ===, Map, for-of)に書き換えるための試みです。
+
+この StrongScript は コードの先頭に 'use strong' ディレクティブを付けることで Strong Mode になり、実行されます。
+ちょうど 'use strict' で Strict Mode にするのと同様です。
+
+今回のio.js v2.0 からこの Strong Mode が --strong_mode オプション付きで使えるようになりました。
+
+※ ちなみにまだまだ実験的な試みなので、本番環境で使うのは推奨できません。
+
+var => let/const
+
+'use strong';
+
+var a = 'hoge';
+$ iojs --strong_mode strong_mode/vars.js
+
+/Users/yosuke/iojs_v2_features/strong_mode/vars.js:3
+var a = 'hoge';
+^^^
+SyntaxError: Please don't use 'var' in strong mode, use 'let' or 'const' instead
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:411:25)
+    at Object.Module._extensions..js (module.js:446:10)
+    at Module.load (module.js:353:32)
+    at Function.Module._load (module.js:308:12)
+    at Function.Module.runMain (module.js:469:10)
+    at startup (node.js:124:18)
+    at node.js:882:3
+arguments => ...args
+
+'use strong';
+
+function some() {
+  let args = Array.prototype.slice.call(arguments);
+}
+
+some();
+$ iojs --strong_mode strong_mode/arguments.js
+/Users/yosuke/iojs_v2_features/strong_mode/arguments.js:4
+  let args = Array.prototype.slice.call(arguments);
+                                        ^^^^^^^^^
+SyntaxError: Please don't use 'arguments' in strong mode, use '...args' instead
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:411:25)
+    at Object.Module._extensions..js (module.js:446:10)
+    at Module.load (module.js:353:32)
+    at Function.Module._load (module.js:308:12)
+    at Function.Module.runMain (module.js:469:10)
+    at startup (node.js:124:18)
+    at node.js:882:3
+eqeq => eqeqeq
+
+'use strong';
+
+if ('a' == 'a') {
+}
+$ iojs --strong_mode strong_mode/eqeq.js
+
+/Users/yosuke/iojs_v2_features/strong_mode/eqeq.js:3
+if ('a' == 'a') {
+        ^^
+SyntaxError: Please don't use '==' or '!=' in strong mode, use '===' or '!==' instead
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:411:25)
+    at Object.Module._extensions..js (module.js:446:10)
+    at Module.load (module.js:353:32)
+    at Function.Module._load (module.js:308:12)
+    at Function.Module.runMain (module.js:469:10)
+    at startup (node.js:124:18)
+    at node.js:882:3
+propertyの削除に対して、 delete を使わず、 Map/Setを使う
+
+'use strong';
+let obj = { key: 'value'};
+delete obj.key;
+console.log(obj);
+$ iojs --strong_mode strong_mode/delete.js
+/Users/yosuke/iojs_v2_features/strong_mode/delete.js:5
+delete obj.key;
+           ^^^
+SyntaxError: Please don't use 'delete' in strong mode, use maps or sets instead
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:411:25)
+    at Object.Module._extensions..js (module.js:446:10)
+    at Module.load (module.js:353:32)
+    at Function.Module._load (module.js:308:12)
+    at Function.Module.runMain (module.js:469:10)
+    at startup (node.js:124:18)
+    at node.js:882:3
+for-in => for-of
+
+'use strong';
+
+for (let k in [1, 2, 3]) {
+  console.log(k);
+}
+$ iojs --strong_mode strong_mode/for.js
+/Users/yosuke/iojs_v2_features/strong_mode/for.js:3
+for (let k in [1, 2, 3]) {
+           ^^
+SyntaxError: Please don't use 'for'-'in' loops in strong mode, use 'for'-'of' instead
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:411:25)
+    at Object.Module._extensions..js (module.js:446:10)
+    at Module.load (module.js:353:32)
+    at Function.Module._load (module.js:308:12)
+    at Function.Module.runMain (module.js:469:10)
+    at startup (node.js:124:18)
+    at node.js:882:3
+-->
+<h2 id="Strong-mode를-지원합니다-v2-0"><a href="#Strong-mode를-지원합니다-v2-0" class="headerlink" title="Strong mode를 지원합니다. (v2.0~)"></a>Strong mode를 지원합니다. (v2.0~)</h2><p>현재, Google의 V8팀은 여러가지 시도를 하고 있는데, 그 중 StrongScript라 불리는 시도가 있습니다.
+이것은, JavaScript의 자유도가 높은 구문(var, arguments, \==, delete, for-in 등)을 가능한 deprecated로 처리해서, ES6을 포함한 최신의 구문(let, ...args, ===, Map, for-of)으로 바꾸기 위한 시도입니다.</p>
+<p>이 StrongScript는 코드의 선두에, ‘use strong’ 디렉티브를 추가하는 것으로 Strong Mode가 되어, 실행됩니다.
+마치 ‘use strict’를 통해 Strict Mode로 설정하는 것과 동일합니다.</p>
+<p>이번의 io.js v2.0부터 Strong Mode가 –strong_mode 옵션 추가로 사용할 수 있게 되었습니다.</p>
+<ul>
+<li>참고로 아직 실험적 시도이기 때문에, 실제 환경에서 사용하는 것은 권장하지 않습니다.</li>
+</ul>
+<p><strong>var ==&gt; let/const</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strong'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="string">'hoge'</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ iojs --strong_mode strong_mode/vars.js</div><div class="line"></div><div class="line">/Users/yosuke/iojs_v2_features/strong_mode/vars.js:3</div><div class="line">var a = 'hoge';</div><div class="line">^^^</div><div class="line">SyntaxError: Please don't use 'var' in strong mode, use 'let' or 'const' instead</div><div class="line">    at exports.runInThisContext (vm.js:53:16)</div><div class="line">    at Module._compile (module.js:411:25)</div><div class="line">    at Object.Module._extensions..js (module.js:446:10)</div><div class="line">    at Module.load (module.js:353:32)</div><div class="line">    at Function.Module._load (module.js:308:12)</div><div class="line">    at Function.Module.runMain (module.js:469:10)</div><div class="line">    at startup (node.js:124:18)</div><div class="line">    at node.js:882:3</div></pre></td></tr></table></figure>
+<p><strong>arguments =&gt; ...args</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strong'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">some</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">some();</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ iojs --strong_mode strong_mode/arguments.js</div><div class="line">/Users/yosuke/iojs_v2_features/strong_mode/arguments.js:4</div><div class="line">  let args = Array.prototype.slice.call(arguments);</div><div class="line">                                        ^^^^^^^^^</div><div class="line">SyntaxError: Please don't use 'arguments' in strong mode, use '...args' instead</div><div class="line">    at exports.runInThisContext (vm.js:53:16)</div><div class="line">    at Module._compile (module.js:411:25)</div><div class="line">    at Object.Module._extensions..js (module.js:446:10)</div><div class="line">    at Module.load (module.js:353:32)</div><div class="line">    at Function.Module._load (module.js:308:12)</div><div class="line">    at Function.Module.runMain (module.js:469:10)</div><div class="line">    at startup (node.js:124:18)</div><div class="line">    at node.js:882:3</div></pre></td></tr></table></figure>
+<p><strong>eqeq =&gt; eqeqeq</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strong'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="string">'a'</span> == <span class="string">'a'</span>) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ iojs --strong_mode strong_mode/eqeq.js</div><div class="line"></div><div class="line">/Users/yosuke/iojs_v2_features/strong_mode/eqeq.js:3</div><div class="line">if ('a' == 'a') &#123;</div><div class="line">        ^^</div><div class="line">SyntaxError: Please don't use '==' or '!=' in strong mode, use '===' or '!==' instead</div><div class="line">    at exports.runInThisContext (vm.js:53:16)</div><div class="line">    at Module._compile (module.js:411:25)</div><div class="line">    at Object.Module._extensions..js (module.js:446:10)</div><div class="line">    at Module.load (module.js:353:32)</div><div class="line">    at Function.Module._load (module.js:308:12)</div><div class="line">    at Function.Module.runMain (module.js:469:10)</div><div class="line">    at startup (node.js:124:18)</div><div class="line">    at node.js:882:3</div></pre></td></tr></table></figure>
+<p><strong>property를 삭제할 때, delete를 사용하지 않고, Map/Set을 사용</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strong'</span>;</div><div class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">key</span>: <span class="string">'value'</span>&#125;;</div><div class="line"><span class="keyword">delete</span> obj.key;</div><div class="line"><span class="built_in">console</span>.log(obj);</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ iojs --strong_mode strong_mode/delete.js</div><div class="line">/Users/yosuke/iojs_v2_features/strong_mode/delete.js:5</div><div class="line">delete obj.key;</div><div class="line">           ^^^</div><div class="line">SyntaxError: Please don't use 'delete' in strong mode, use maps or sets instead</div><div class="line">    at exports.runInThisContext (vm.js:53:16)</div><div class="line">    at Module._compile (module.js:411:25)</div><div class="line">    at Object.Module._extensions..js (module.js:446:10)</div><div class="line">    at Module.load (module.js:353:32)</div><div class="line">    at Function.Module._load (module.js:308:12)</div><div class="line">    at Function.Module.runMain (module.js:469:10)</div><div class="line">    at startup (node.js:124:18)</div><div class="line">    at node.js:882:3</div></pre></td></tr></table></figure>
+<p><strong>for-in =&gt; for-of</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strong'</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ iojs --strong_mode strong_mode/for.js</div><div class="line">/Users/yosuke/iojs_v2_features/strong_mode/for.js:3</div><div class="line">for (let k in [1, 2, 3]) &#123;</div><div class="line">           ^^</div><div class="line">SyntaxError: Please don't use 'for'-'in' loops in strong mode, use 'for'-'of' instead</div><div class="line">    at exports.runInThisContext (vm.js:53:16)</div><div class="line">    at Module._compile (module.js:411:25)</div><div class="line">    at Object.Module._extensions..js (module.js:446:10)</div><div class="line">    at Module.load (module.js:353:32)</div><div class="line">    at Function.Module._load (module.js:308:12)</div><div class="line">    at Function.Module.runMain (module.js:469:10)</div><div class="line">    at startup (node.js:124:18)</div><div class="line">    at node.js:882:3</div></pre></td></tr></table></figure>
+<!--
+幅広い環境のサポート (v1.4.0, v1.6.0, v1.8.0 )
+
+今回、かなりビルド環境に気合が入っていて、幅広い環境でバイナリが提供されています。 Node.js の時は、 darwin(osx), linux, sunos(solaris), windows のバイナリが提供されるだけでしたが(それでもかなり素晴らしいけど)、 io.js からは ARM v6, v7も含めたかなり多くの環境でバイナリが提供されています。
+
+binaryは提供されていませんが、 Android でも動くためのビルドオプションがあったり、SmartOS、FreeBSDでも動くためのオプションが提供されています。
+
+また色んなOSの仮想環境を構築し、そこの上でテストを実行しています。どこかの環境でエラーがあったらすぐに分かるようになっています。
+
+https://jenkins-iojs.nodesource.com/job/iojs+any-pr+multi/
+依存ライブラリ関連 (v2.0.0〜)
+
+v8が 4.2 になった
+
+v8が新しくなったので、JavaScriptの最適化やES6の機能が増えました。これに関しては先ほど紹介しました。
+また、v8がアップグレードされたことで、V8のAPI が更新され、 Native Module も変更が必要になりました。
+つまり、古いNative moduleのままでは動かなくなってしまいました。
+
+現時点で v2.0 では動かないモジュール一覧に関しては以下のissueをご一読ください。
+
+github.com
+
+nan の更新を行うだけでいけるモジュールも多いので、忘れているモジュールに関しては、 今のところ nan を更新して pull request で教えてあげればいいかと思います。
+ただ毎回 v8 が更新されるだけで動かなくなるモジュールがたくさんあると困るので、 nan を core に入れる提案もされています。
+
+OpenSSL v1.0.2a になった
+
+OpenSSL が v1.0.2a になり、 crypto の性能が改善されました。
+この辺りの記事が詳しいです。*1
+
+github.com
+http-parser v2.5.0 になった
+
+http-parserがやっと最新になりました。一旦 http-parser は v2.4になった後、バグが見つかりrevertされましたが、そのバグが修正され、高速化されたhttp-parserが使えるようになりました。
+
+libuv が v1.4.2 になった
+
+libuv が新しくなりました。 windows/linuxでのバグ修正や ARM でも動くようにするための修正などが含まれています。
+
+npm が v2.9.0 になった
+
+npm も新しくなりました。翻訳があるのでそこを見ておくと良いかもしれません。
+medium.com
+-->
+<h2 id="폭넓은-환경의-지원-v1-4-0-v1-6-0-v1-8-0"><a href="#폭넓은-환경의-지원-v1-4-0-v1-6-0-v1-8-0" class="headerlink" title="폭넓은 환경의 지원(v1.4.0, v1.6.0, v1.8.0)"></a>폭넓은 환경의 지원(v1.4.0, v1.6.0, v1.8.0)</h2><p>이번에, 상당히 빌드 환경에 기합이 들어가 있어, 폭넓은 환경에서 바이너리가 제공되고 있습니다.
+Node.js였을 때는, darwin(osx), linux, sunos(solaris), windows의 바이너리가 제공되는 것뿐이었는데(그것만으로도 상당히 대단하긴 했지만), io.js부터는 ARM v6, v7을 포함해 상당히 많은 환경에서 바이너리가 제공되고 있습니다.</p>
+<p>binary는 제공되지 않지만, Android에서 기동하기 위한 옵션이 있거나, SmartOS, FreeBSD에서 기동하기 위한 옵션이 제공되고 있습니다.</p>
+<p>또 여러 OS의 가상 환경을 구축하고 그 위에서 테스트를 실행하고 있습니다. 어딘가의 환경에서 에러가 발생하면 즉시 알 수 있게 되어있습니다.</p>
+<p><a href="https://jenkins-iojs.nodesource.com/job/iojs+any-pr+multi/" target="_blank" rel="external">https://jenkins-iojs.nodesource.com/job/iojs+any-pr+multi/</a></p>
+<h1 id="의존-라이브러리-관련-v2-0-0"><a href="#의존-라이브러리-관련-v2-0-0" class="headerlink" title="의존 라이브러리 관련(v2.0.0~)"></a>의존 라이브러리 관련(v2.0.0~)</h1><h2 id="v8이-4-2가-되었습니다"><a href="#v8이-4-2가-되었습니다" class="headerlink" title="v8이 4.2가 되었습니다."></a>v8이 4.2가 되었습니다.</h2><p>v8이 새로워졌기 때문에, JavaScript의 최적화 및 ES6의 기능이 늘어났습니다. 이에 관해서는 좀 전에 소개했습니다. 또 v8이 업그레이드되면서, V8의 API가 갱신되고 Native Module도 변경이 필요하게 됐습니다.</p>
+<p>즉, 낡은 Native module의 상태로는 작동하지 않게 되었습니다.</p>
+<p>현 시점에서 v2.0에서 동작하지 않는 모듈 목록에 관해서는 아래의 이슈를 읽어 주세요.</p>
+<p><a href="https://github.com/nodejs/node/issues/1620" target="_blank" rel="external">github.com</a></p>
+<p><a href="https://github.com/nodejs/nan" target="_blank" rel="external">nan</a>을 <a href="https://github.com/websockets/bufferutil/pull/3" target="_blank" rel="external">갱신하는 것만으로</a> 가능한 모듈도 많기 때문에, 잊고 있는 모듈에 관해서는, 지금 nan을 갱신해서 풀 리퀘스트를 통해 알려주는 것이 좋지 않을까 하고 생각합니다.
+다만 이번 v8이 갱신되는 것 만으로, 동작하지 않게 되는 모듈이 많으면 곤란하기 때문에, nan을 core에 넣자는 제안도 있습니다.</p>
+<h2 id="OpenSSL-v1-0-2a가-되었습니다"><a href="#OpenSSL-v1-0-2a가-되었습니다" class="headerlink" title="OpenSSL v1.0.2a가 되었습니다."></a>OpenSSL v1.0.2a가 되었습니다.</h2><p>OpenSSL이 v1.0.2a가 되고, crypto의 성능이 개선되었습니다.
+이 글이 자세히 설명하고 있습니다. [^1]</p>
+<p><a href="https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0" target="_blank" rel="external">github.com</a></p>
+<h2 id="http-parser-v2-5-0이-되었습니다"><a href="#http-parser-v2-5-0이-되었습니다" class="headerlink" title="http-parser v2.5.0이 되었습니다."></a>http-parser v2.5.0이 되었습니다.</h2><p>http-parser가 드디어 갱신되었습니다. 일단 http-parser는 v2.4가 된 후, 버그가 발견되고 버전이 돌아갔지만, 그 버그가 수정되어, 고속화된 http-parser가 사용할 수 있게 되었습니다.</p>
+<h2 id="libuv가-v1-4-2가-되었습니다"><a href="#libuv가-v1-4-2가-되었습니다" class="headerlink" title="libuv가 v1.4.2가 되었습니다."></a>libuv가 v1.4.2가 되었습니다.</h2><p>libuv가 새로워졌습니다. windows/linux에서의 버그 수정 및 ARM에서도 동작하기 위한 수정 등이 포함되어 있습니다.</p>
+<h2 id="npm이-v2-9-0이-되었습니다"><a href="#npm이-v2-9-0이-되었습니다" class="headerlink" title="npm이 v2.9.0이 되었습니다."></a>npm이 v2.9.0이 되었습니다.</h2><p>npm도 새로워졌습니다. 번역이 있으므로, 한 번 보는 것도 좋겠습니다.
+<a href="https://medium.com/@watilde/%E7%BF%BB%E8%A8%B3-npm-weekly-14-d0ff242133ef" target="_blank" rel="external">medium.com</a></p>
+<!--
+
+まとめ (v1.0 〜 v2.0の違い)
+
+Streamを簡単に作れるようになった
+LTTNG のサポート
+Promise の unhandledRejection / rejectionHandled イベント
+Buffer の indexOf メソッドを追加
+node --require オプション追加
+repl に history をsaveするモードが追加
+v8 が新しくなり、 class, object リテラルの拡張 etcとStrong Mode が追加
+ARMを初めとする バイナリの提供と幅広い環境のサポート
+依存ライブラリの刷新による性能向上、バグ修正など
+結び
+
+さて、今回ざざっと v1.0 から今までの変更をお伝えしました。これらの変更は日本語の記事であれば、
+
+blog.iojs.jp
+
+にまとまっています*2。
+
+変化の激しい io.js を追うのは大変ですが、この記事を毎週少しでも読んでおいてもらえると助けになると思います。
+(毎週週末の時間を削って、翻訳している翻訳チームを助けてもらえるとありがたいです。)
+
+また、コアチームは今は v3.0 に向けて動き出しています。僕もちょっとずつ改善を入れています。この変化を楽しみながら貢献できるといいなと思います。
+
+*1:大津さんが書いてくれました。 大津さん ++
+
+*2:いつも翻訳してくれる @watilde さん、 @jgs さん、 @kosamari さんに感謝です。
+-->
+<h2 id="정리-v1-0-v2-0의-다른-점"><a href="#정리-v1-0-v2-0의-다른-점" class="headerlink" title="정리 (v1.0 ~ v2.0의 다른 점)"></a>정리 (v1.0 ~ v2.0의 다른 점)</h2><ul>
+<li>Stream을 간단히 만들 수 있게 되었습니다.</li>
+<li>LTTNG의 지원</li>
+<li>promise의 unhandledRejection / rejectionHandled 이벤트</li>
+<li>Buffer의 indexOf 메소드 추가</li>
+<li>node –require 옵션 추가</li>
+<li>repl에 history 옵션 추가</li>
+<li>v8이 새로워지고, class, object 리터럴의 확장 etc와 Strong Mode의 추가</li>
+<li>ARM을 시작으로, 바이너리 제공과 폭넓은 환경의 지원</li>
+<li>의존 라이브러리의 갱신을 통한 성능 향상, 버그 수정 등</li>
+</ul>
+<h2 id="끝맺음"><a href="#끝맺음" class="headerlink" title="끝맺음"></a>끝맺음</h2><p>자, 이번에 v1.0부터 지금까지의 변경 사항을 슥삭 정리해 봤습니다. 앞으로의 변경사항은 일본어로 작성되어, <a href="http://blog.iojs.jp/" target="_blank" rel="external">blog.iojs.jp</a>에 정리되고 있습니다.[^2]</p>
+<p>변화가 극심한 io.js를 따라가는 것은 힘든 일이지만, 이 글을 매주 조금씩 읽어둔다면 도움이 될 것입니다.</p>
+<p>또, 코어 팀은 지금 v3.0을 향해서 움직이기 시작했습니다. 저도 조금씩 기여하고 있습니다. 이 변화를 즐기면서 공헌할 수 있다면 좋겠다고 생각합니다.</p>
+<p>[^1]: 大津 님이 써주셨습니다. 大津 님++</p>
+<p>[^2]: 언제나 번역해주시는 @watilde 님, @jgs 님, @kosamari 님에게 감사드립니다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/articles/2015/05/06/io-js-v2.0-released/" data-id="cixcwcvm800123rqkju1em27c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/05/01/weekly/" class="article-date">
+    <time datetime="2015-05-01T00:00:00.000Z" itemprop="datePublished">2015-05-01</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/05/01/weekly/">io.js 주간 뉴스 2015년 5월 1일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-may-1st-362e01678d48" taret="_blank">
+        io.js Week of May 1st — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/freenice12" target="_blank">freenice12</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="io-js-2-0-릴리스-후보"><a href="#io-js-2-0-릴리스-후보" class="headerlink" title="io.js 2.0 릴리스 후보"></a>io.js 2.0 릴리스 후보</h1><!--
+io.js 2.0 release candidate, community updates and events.
+-->
+<p>io.js 2.0 릴리스 후보, 커뮤니티 업데이트, 행사들.</p>
+<!--
+io.js 2.0 release candidate
+This week we had one io.js nightly release v2.0, complete changelog will be found soon on GitHub.
+-->
+<p>이번 주에 io.js <a href="https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/" target="_blank" rel="external">v2.0</a>(nightly)을 배포했습니다. 전체 변경사항은 <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub에서 확인</a>할 수 있습니다.</p>
+<h3 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h3><!--
+* New [johnny-five](http://johnny-five.io/) site launched.
+* iojs.io domain was donated to the project and it will redirect to iojs.org [iojs/io.js#1534](http://techcrunch.com/2015/04/14/popular-javascript-package-manager-npm-raises-8m-launches-private-modules/).
+* david-dm.org is [now running](https://medium.com/@programmer/thoughts-on-node-foundation-abcf86c72786) on iojs.
+* io.js v2.0 release candidate is [out](https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/).
+* io.js [ARM cluster](https://twitter.com/rvagg/status/593226114992087041) is growing.
+* Onboarding another batch of committers [iojs/io.js#1552](https://github.com/nodejs/node/issues/1552)
+* io.js TC meeting 4/29 on [YouTube](https://www.youtube.com/watch?v=-e675TT4WEA) and [SoundCloud](https://twitter.com/dotproto/status/594145574204510208).
+* io.js/node.js code [convergence plan draft](https://github.com/jasnell/dev-policy/blob/master/convergence.md).
+* initial [repo](https://github.com/jasnell/node.js-convergence) for code convergence work for io.js/node.js.
+* Node.js Foundation Governance/Convergence Call on [YouTube](https://www.youtube.com/watch?v=u9h0s3YtNAU).
+* Microsoft releases new [Visual Studio Code](https://code.visualstudio.com/) based on Electron (AtomShell).
+* io.js support coming to [Modulus](http://blog.modulus.io/upcoming-updates-for-nodejs-applications)
+* Yosuke Furukawa created [iojs-new-features repo](https://github.com/yosuke-furukawa/iojs-new-features) with upcoming changes in io.js v2.0.
+-->
+<ul>
+<li>새 <a href="http://johnny-five.io/" target="_blank" rel="external">johnny-five</a> 사이트를 개설했습니다.</li>
+<li>iojs.io 도메인은 프로젝트에 기부했고, iojs.org로 리다이렉트 될 것입니다. <a href="https://github.com/nodejs/node/issues/1534" target="_blank" rel="external">iojs/io.js#1534</a></li>
+<li>david-dm.org는 iojs를 <a href="https://twitter.com/_alanshaw/status/592855646124531713" target="_blank" rel="external">사용 중</a>입니다.</li>
+<li>io.js v2.0 릴리스 후보는 <a href="https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/" target="_blank" rel="external">여기</a>서 확인하세요.</li>
+<li>io.js <a href="https://twitter.com/rvagg/status/593226114992087041" target="_blank" rel="external">ARM 클러스터</a>는 발전하고 있습니다.</li>
+<li>여러 커미터들이 추가로 참여하게 되었습니다.<a href="https://github.com/nodejs/node/issues/1552" target="_blank" rel="external">iojs/io.js#1552</a></li>
+<li>io.js TC 회의가 4월 29일 <a href="https://www.youtube.com/watch?v=-e675TT4WEA" target="_blank" rel="external">YouTube</a>와 <a href="https://twitter.com/dotproto/status/594145574204510208" target="_blank" rel="external">SoundCloud</a>에서 진행되었습니다.</li>
+<li>io.js/node.js 코드 <a href="https://github.com/jasnell/dev-policy/blob/master/convergence.md" target="_blank" rel="external">통합 계획 초안</a>이 나왔습니다.</li>
+<li>io.js/node.js의 코드 통합을 위한 초기 <a href="https://github.com/jasnell/node.js-convergence" target="_blank" rel="external">저장소</a>를 생성했습니다.</li>
+<li>Node.js 재단의 통합 관리 방침 회의를 <a href="https://www.youtube.com/watch?v=u9h0s3YtNAU" target="_blank" rel="external">YouTube</a>에서 보실 수 있습니다.</li>
+<li>Microsoft는 Electron(AtomShell) 기반의 새로운 <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a>를 배포했습니다.</li>
+<li>io.js는 <a href="http://blog.modulus.io/upcoming-updates-for-nodejs-applications" target="_blank" rel="external">Modulus</a>를 지원할 것입니다.</li>
+<li>Yosuke Furukawa가 다가올 io.js v2.0의 변화를 다룬 <a href="https://github.com/yosuke-furukawa/iojs-new-features" target="_blank" rel="external">iojs-new-features 저장소</a>를 만들었습니다.</li>
+</ul>
+<h3 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h3><!--
+* [NodeConf Adventure](http://nodeconf.com/) tickets are on sale, June 11th — 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th — 10th at Washington State
+* [BrazilJS Conf](http://braziljs.com.br/) tickets are on sale, August 21st — 22nd at Shopping Center BarraShoppingSul
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th — 9th at Waterford, Ireland
+-->
+<ul>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf Adventure</a> 입장권을 판매하고 있습니다. 6월 11일부터 14일까지 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일부터 10일까지 워싱턴 주에서 열립니다.</li>
+<li><a href="http://braziljs.com.br/" target="_blank" rel="external">BrazilJS Conf</a> 입장권을 판매하고 있습니다. 8월 21일과 22일 BarraShoppingSul 쇼핑 센터에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 티켓 판매 중. 9월 6일부터 9일까지 아일랜드 워터포드에서 열립니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/05/01/weekly/" data-id="cixcwcvm100103rqkw0rmisd6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/04/25/weekly/" class="article-date">
+    <time datetime="2015-04-25T00:00:00.000Z" itemprop="datePublished">2015-04-25</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/04/25/weekly/">io.js 주간 뉴스 2015년 4월 24일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-april-24th-bd67dcbdfa65" taret="_blank">
+        io.js Week of April 24th — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/hibiyasleep" target="_blank">Kuriyama hibiya</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+io.js 주간 뉴스 2015년 4월 24일
+=====================
+-->
+<!--
+io.js 1.8.1 release, proposal for new TC members, community updates, events and many more…
+-->
+<p>io.js 1.8.1 릴리스, 새 TC 멤버를 위한 제안, 커뮤니티 업데이트, 행사 등…</p>
+<!--
+io.js 1.8.1 release
+-------------------
+-->
+<h1 id="io-js-1-8-1-릴리스"><a href="#io-js-1-8-1-릴리스" class="headerlink" title="io.js 1.8.1 릴리스"></a>io.js 1.8.1 릴리스</h1><!--
+This week we had one io.js release v1.8.1, complete changelog can be found on GitHub.
+-->
+<p>이번 주, 우리는 io.js <a href="https://iojs.org/dist/v1.8.1/" target="_blank" rel="external">v1.8.1</a>을 릴리스했습니다. 전체 changelog는 <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub에서 확인</a>할 수 있습니다.</p>
+<!--
+### Notable changes
+-->
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* NOTICE: Skipped v1.8.0 due to problems with release tooling. See #1436 for details.
+* build: Support for building io.js as a static library (Marat Abdullin) #1341
+* deps: Upgrade openssl to 1.0.2a (Shigeki Ohtsu) #1389
+* Users should see performance improvements when using the crypto API. See here for details.
+* npm: Upgrade npm to 2.8.3. See the release notes for details. Includes improved git support.
+* src: Allow multiple arguments to be passed to process.nextTick (Trevor Norris) #1077
+* module: The interaction of require(‘.’) with NODE_PATH has been restored and deprecated. This functionality will be removed at a later point. (Roman Reiss) #1363
+-->
+<ul>
+<li>알림: 릴리스 툴의 문제로 v1.8.0을 건너뜁니다. <a href="https://github.com/nodejs/node/issues/1436" target="_blank" rel="external">#1436</a></li>
+<li>build: io.js를 정적 라이브러리로 빌드하기 위한 지원 추가 (Marat Abdullin) <a href="https://github.com/nodejs/node/issues/1341" target="_blank" rel="external">#1341</a></li>
+<li>deps: openssl을 1.0.2a로 업그레이드 (Shigeki Ohtsu) <a href="https://github.com/nodejs/node/issues/1389" target="_blank" rel="external">#1389</a></li>
+<li>crypto API의 성능 향상이 있을 것입니다. 자세한 것은 <a href="https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0" target="_blank" rel="external">여기를 확인</a>하세요.</li>
+<li>npm: npm을 2.8.3으로 업그레이드했습니다. 자세한 것은 <a href="https://github.com/npm/npm/releases/tag/v2.8.3" target="_blank" rel="external">릴리즈 노트</a>를 확인해 주세요. 향상된 git 지원을 포함합니다.</li>
+<li>src: <code>process.nextTick</code>에 여러 매개 변수를 사용할 수 있도록 허용 (Trevor Norris) <a href="https://github.com/nodejs/node/issues/1077" target="_blank" rel="external">#1077</a></li>
+<li>module: <code>NODE_PATH</code>와 <code>require(‘.’)</code>의 상호 작용이 복원되고 폐기되었습니다. 이 기능은 나중에 제거될 것입니다. (Roman Reiss) <a href="https://github.com/nodejs/node/issues/1363" target="_blank" rel="external">#1363</a></li>
+</ul>
+<!--
+### Known issues
+-->
+<h3 id="알려진-문제"><a href="#알려진-문제" class="headerlink" title="알려진 문제"></a>알려진 문제</h3><!--
+* Some problems with unreferenced timers running during beforeExit are still to be resolved. See #1264.
+* Surrogate pair in REPL can freeze terminal #690
+* process.send() is not synchronous as the docs suggest, a regression introduced in 1.0.2, see #760 and fix in #774
+* Calling dns.setServers() while a DNS query is in progress can cause the process to crash on a failed assertion #894
+* url.resolve may transfer the auth portion of the url when resolving between two full hosts, see #1435.
+* readline: split escapes are processed incorrectly, see #1403
+-->
+<ul>
+<li><code>beforeExit</code> 중에 참조 해제된 타이머에 대한 문제가 아직 남아 있습니다. <a href="https://github.com/nodejs/node/issues/1264" target="_blank" rel="external">#1264</a>.</li>
+<li>REPL에 입력된 서로게이트 페어가 터미널을 얼릴 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li><code>process.send()</code>가 문서에 쓰여진 것처럼 동기적이지 않으며, 이 문제는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a> 그리고 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에 해결.</li>
+<li>DNS 질의 진행 중에 호출된 <code>dns.setServers()</code>가 실패한 단언문으로 프로세스를 크래시시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+<li><code>url.resolve</code>가 다른 두 호스트 사이를 해석하는 중 URL의 인증 정보 부분을 교환할 수 있습니다. <a href="https://github.com/nodejs/node/issues/1435" target="_blank" rel="external">#1435</a></li>
+<li>readline: 분리된 이스케이프가 제대로 처리되지 않습니다. <a href="https://github.com/nodejs/node/issues/1403" target="_blank" rel="external">#1403</a></li>
+</ul>
+<!--
+### Community Updates
+-->
+<h3 id="커뮤니티-소식"><a href="#커뮤니티-소식" class="headerlink" title="커뮤니티 소식"></a>커뮤니티 소식</h3><!--
+* Fedor Indutny opened discussion about removing TLS newSession and resumeSession event. iojs/io.js#1462
+* Proposal to change the C HTTP parser JS HTTP parser here
+* NPM founder talks about io.js at InfoWorld
+* Proposal to add mikeal, mscdex, shigeki as new TC members. iojs/io.js#1483
+-->
+<ul>
+<li>Fedor Indutny가 TLS <code>newSession</code>과 <code>resumeSession</code> 이벤트를 제거하자는 토론을 열었습니다. <a href="https://github.com/nodejs/node/issues/1462" target="_blank" rel="external">iojs/io.js#1462</a></li>
+<li>C로 짜여진 HTTP 파서를 JavaScript로 <a href="https://github.com/nodejs/node/pull/1457" target="_blank" rel="external">교체하자는 제안</a>이 있습니다.</li>
+<li>NPM 창시자가 InfoWorld에서 <a href="http://www.infoworld.com/article/2910594/node-js/npm-founder-foresees-merger-node-js-io-js.html" target="_blank" rel="external">io.js를 언급</a></li>
+<li>mikeal, mscdex, shigeki를 새 TC 멤버로 <a href="https://github.com/nodejs/node/issues/1483#issuecomment-95128140" target="_blank" rel="external">추가하자는 제안</a>이 있습니다.</li>
+</ul>
+<!--
+### Upcoming Events
+-->
+<h3 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h3><!--
+* JSConf Uruguay tickets are on sale, April 24th & 25th at Montevideo, Uruguay
+* NodeConf Adventure tickets are on sale, June 11th — 14th at Walker Creek Ranch, CA
+* CascadiaJS tickets are on sale, July 8th — 10th at Washington State
+* NodeConf EU tickets are on sale, September 6th — 9th at Waterford, Ireland
+-->
+<ul>
+<li><a href="http://jsconf.uy/" target="_blank" rel="external">JSConf 우루과이</a> 입장권을 판매하고 있습니다. 4월 24일과 25일 우루과이 몬테비데오에서 열립니다.</li>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf Adventure</a> 입장권을 판매하고 있습니다. 6월 11일부터 14일까지 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일부터 10일까지 워싱턴 주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 티켓 판매 중. 9월 6일부터 9일까지 아일랜드 워터포드에서 열립니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/04/25/weekly/" data-id="cixcwcvly000y3rqkbuxzni17" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/04/17/weekly/" class="article-date">
+    <time datetime="2015-04-17T00:00:00.000Z" itemprop="datePublished">2015-04-17</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/04/17/weekly/">io.js 주간 뉴스 2015년 4월 17일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-april-17th-e4c6f2db7659" taret="_blank">
+        io.js Week of April 17th — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/taggon" target="_blank">taggon</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+io.js 1.7 release, community updates and events, and many more
+-->
+<p>io.js 1.7 릴리스, 커뮤니티 업데이트와 이벤트 등</p>
+<!--
+io.js 1.7 releases
+
+This week we had two io.js releases [v1.7.0](https://iojs.org/dist/v1.7.0/) and [v1.7.1](https://iojs.org/dist/v1.7.1/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<h2 id="io-js-1-7-릴리스"><a href="#io-js-1-7-릴리스" class="headerlink" title="io.js 1.7 릴리스"></a>io.js 1.7 릴리스</h2><p>이번 주에 io.js <a href="https://iojs.org/dist/v1.7.0/" target="_blank" rel="external">v1.7.0</a>과 <a href="https://iojs.org/dist/v1.7.1/" target="_blank" rel="external">v1.7.1</a>을 릴리스했습니다. 전체 변경사항은 <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub에서</a> 볼 수 있습니다.</p>
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* **build**: A syntax error in the Makefile for release builds caused 1.7.0 to be DOA and unreleased. (Rod Vagg) [#1421](https://github.com/nodejs/node/pull/1421).
+* **C++ API**: Fedor Indutny contributed a feature to V8 which has been backported to the V8 bundled in io.js. SealHandleScope allows a C++ add-on author to *seal* a HandleScope to prevent further, unintended allocations within it. Currently only enabled for debug builds of io.js. This feature helped detect the leak in [#1075](https://github.com/nodejs/node/issues/1075) and is now activated on the root HandleScope in io.js. (Fedor Indutny) [#1395](https://github.com/nodejs/node/pull/1395).
+* **ARM**: This release includes significant work to improve the state of ARM support for builds and tests. The io.js CI cluster’s ARMv6, ARMv7 and ARMv8 build servers are now all (mostly) reporting passing builds and tests.
+* ARMv8 64-bit (AARCH64) is now properly supported, including a backported fix in libuv that was mistakenly detecting the existence of epoll_wait(). (Ben Noordhuis) [#1365](https://github.com/nodejs/node/pull/1365). ARMv6: [#1376](https://github.com/nodejs/node/issues/1376) reported a problem with Math.exp() on ARMv6 (including Raspberry Pi). The culprit is erroneous codegen for ARMv6 when using the “fast math” feature of V8. — nofast_math has been turned on for all ARMv6 variants by default to avoid this, fast math can be turned back on with — fast_math. (Ben Noordhuis) [#1398](https://github.com/nodejs/node/pull/1398). Tests: timeouts have been tuned specifically for slower platforms, detected as ARMv6 and ARMv7. (Roman Reiss) [#1366](https://github.com/nodejs/node/pull/1366).
+* **npm**: Upgrade npm to 2.7.6. See the [release notes](https://github.com/npm/npm/releases/tag/v2.7.6) for details.
+-->
+<ul>
+<li><strong>빌드</strong>: 1.7.0을 출시할 수 없게 만든 Makefile의 문법 에러를 수정했습니다. (Rod Vagg) <a href="https://github.com/nodejs/node/pull/1421" target="_blank" rel="external">#1421</a>.</li>
+<li><strong>C++ API</strong>: Fedor Indutny가 io.js에 포함된 V8에 있던 기능을 V8로 포팅했습니다. <code>SealHandleScope</code>를 사용하면 C++ 애드온 제작자가 <code>HandleScope</code>를 <em>봉인(seal)</em> 하여 애드온에서 발생하는 일어날 수 있는 의도하지 않은 할당을 방지할 수 있습니다. 현재는 io.js의 디버그 빌드에서만 사용가능합니다. 이 기능을 사용하면 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>의 메모리 누수를 탐지할 수 있으며 현재는 io.js의 루트 HandleScope에서 활성화되어 있습니다. (Fedor Indutny) <a href="https://github.com/nodejs/node/pull/1395" target="_blank" rel="external">#1395</a>.</li>
+<li><strong>ARM</strong>: 이번 릴리스에는 빌드와 테스트에 있어 ARM에 대한 지원이 대폭 개선되었습니다. io.js CI 클러스터의 ARMv6, ARMv7, ARMv8 빌드 서버가 (거의) 모든 빌드와 테스트를 통과했다고 보고하고 있습니다.</li>
+<li>ARMv8 64비트 (AARCH64)를 이제 제대로 지원합니다. libuv에서 <code>epoll_wait()</code>의 존재 여부를 오판하던 문제에 대한 수정사항도 포함되었습니다. (Ben Noordhuis) <a href="https://github.com/nodejs/node/pull/1365" target="_blank" rel="external">#1365</a>. ARMv6: <a href="https://github.com/nodejs/node/issues/1376" target="_blank" rel="external">#1376</a>(라스베리 파이 포함)에서 <code>Math.exp()</code>를 사용할 때 문제가 발생한다는 보고가 있습니다. V8의 “fast math” 기능을 사용할 때 ARMv6의 잘못된 코드 생성기가 범인이었습니다.  이 문제를 피하기 위해 ARMv6에서는 <code>—nofast_math</code>를 기본값으로 사용하도록 했습니다. <code>—fast_math</code>를 사용하면 fast math 기능을 사용할 수 있습니다. (Ben Noordhuis) <a href="https://github.com/nodejs/node/pull/1398" target="_blank" rel="external">#1398</a>. 테스트: ARMv6, ARMv7과 같은 느린 플랫폼에서 타임아웃 시간을 조정했습니다. (Roman Reiss) <a href="https://github.com/nodejs/node/pull/1366" target="_blank" rel="external">#1366</a>.</li>
+<li><strong>npm</strong>: npm을 2.7.6으로 업그레이드 했습니다. 자세한 사항은 <a href="https://github.com/npm/npm/releases/tag/v2.7.6" target="_blank" rel="external">릴리스 노트</a>를 참고하세요.</li>
+</ul>
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Some problems with unreferenced timers running during beforeExit are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* process.send() is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling dns.setServers() while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+* readline: split escapes are processed incorrectly, see [#1403](https://github.com/nodejs/node/issues/1403)
+-->
+<ul>
+<li><code>beforeExit</code> 실행 중에 참조되지 않은 타이머가 실행되는 문제점이 있습니다. <a href="https://github.com/nodejs/node/issues/1264" target="_blank" rel="external">#1264</a> 참고.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 버그는 1.0.2에서 나타났었습니다. 문제에 대해서는 <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며  <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 프로세스가 중단될 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a>.</li>
+<li><code>readline</code>: 분할 이스케이프가 올바르게 처리되지 않습니다. <a href="https://github.com/nodejs/node/issues/1403" target="_blank" rel="external">#1403</a>.</li>
+</ul>
+<h2 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h2><!--
+* Difference between io.js and The Node Foundation [iojs/io.js#1416](https://github.com/nodejs/node/issues/1416).
+* NPM launches private modules and npm inc [raises](http://techcrunch.com/2015/04/14/popular-javascript-package-manager-npm-raises-8m-launches-private-modules/).
+* Thoughts of Node.js Foundation on [Medium](https://medium.com/@programmer/thoughts-on-node-foundation-abcf86c72786).
+* io.js v1.8.0 crypto performance on [io.js wiki](https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0).
+* io.js mention on [Oracle’s blog](https://blogs.oracle.com/java-platform-group/entry/node_js_and_io_js).
+* State of the io.js Build [April 2015](https://github.com/nodejs/build/issues/77)
+-->
+<ul>
+<li>io.js와 노드 재단의 차이점 <a href="https://github.com/nodejs/node/issues/1416" target="_blank" rel="external">iojs/io.js#1416</a>.</li>
+<li>NPM에 비공개 모듈이 공개되었으며 npm 주식회사는 <a href="http://techcrunch.com/2015/04/14/popular-javascript-package-manager-npm-raises-8m-launches-private-modules/" target="_blank" rel="external">추가 투자</a>를 받았습니다.</li>
+<li><a href="https://medium.com/@programmer/thoughts-on-node-foundation-abcf86c72786" target="_blank" rel="external">Medium</a>에 Node.js 재단에 대한 생각이라는 글이 게시되었습니다.</li>
+<li><a href="https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0" target="_blank" rel="external">io.js 위키</a>에 io.js v1.8.0의 crypto 성능에 대한 글을 게시했습니다.</li>
+<li><a href="https://blogs.oracle.com/java-platform-group/entry/node_js_and_io_js" target="_blank" rel="external">오라클 블로그</a>에 io.js가 언급되었습니다.</li>
+<li><a href="https://github.com/nodejs/build/issues/77" target="_blank" rel="external">2015년 4월</a>의 io.js 빌드 현황입니다.</li>
+</ul>
+<h2 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h2><!--
+* [JSConf Uruguay](http://jsconf.uy/) tickets are on sale, April 24th & 25th at Montevideo, Uruguay
+-->
+<ul>
+<li><a href="http://jsconf.uy/" target="_blank" rel="external">JSConf Uruguay</a> 입장권을 판매하고 있습니다. 4월 24일과 25일, 우르과이 몬테비데오에서 열립니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/04/17/weekly/" data-id="cixcwcvlo000w3rqkdpyqz5jt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/04/10/weekly/" class="article-date">
+    <time datetime="2015-04-10T00:00:00.000Z" itemprop="datePublished">2015-04-10</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/04/10/weekly/">io.js 주간 뉴스 2015년 4월 10일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-april-10th-cbf6cf32409" taret="_blank">
+        io.js Week of April 10th — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/marocchino" target="_blank">marocchino</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="io-js-1-6-4-릴리스"><a href="#io-js-1-6-4-릴리스" class="headerlink" title="io.js 1.6.4 릴리스"></a>io.js 1.6.4 릴리스</h1><!--
+This week we had one io.js release [v1.6.4](https://iojs.org/dist/v1.6.4/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<p>이번 주에는 <a href="https://iojs.org/dist/v1.6.4/" target="_blank" rel="external">v1.6.4</a> 릴리스가 있었습니다. <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub</a>에서 전체 변경사항을 볼 수 있습니다.</p>
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* **npm**: upgrade npm to 2.7.5. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v275-2015-03-26) for details. Includes two important security fixes.
+* **openssl**: preliminary work has been done for an upcoming upgrade to OpenSSL 1.0.2a [#1325](https://github.com/nodejs/node/pull/1325) (Shigeki Ohtsu). See [#589](https://github.com/nodejs/node/issues/589) for additional details.
+* **timers**: a minor memory leak when timers are unreferenced was fixed, alongside some related timers issues [#1330](https://github.com/nodejs/node/pull/1330) (Fedor Indutny). This appears to have fixed the remaining leak reported in [#1075](https://github.com/nodejs/node/issues/1075).
+* **android**: it is now possible to compile io.js for Android and related devices [#1307](https://github.com/nodejs/node/pull/1307) (Giovanny Andres Gongora Granada).
+-->
+<ul>
+<li><strong>npm</strong>: npm을 2.7.5로 업그레이드했습니다. 자세한 내용은 <a href="https://github.com/npm/npm/blob/master/CHANGELOG.md#v275-2015-03-26" target="_blank" rel="external">npm CHANGELOG.md</a>를 참조하세요. 두 가지 중요한 보안 수정이 있었습니다.</li>
+<li><strong>openssl</strong>: OpenSSL 1.0.2a로 업그레이드 하기 위한 예비 작업이 완료되었습니다. <a href="https://github.com/nodejs/node/pull/1325" target="_blank" rel="external">#1325</a>(Shigeki Ohtsu) 자세한 사항은 <a href="https://github.com/nodejs/node/issues/589" target="_blank" rel="external">#589</a>를 참조하세요.</li>
+<li><strong>timers</strong>: 관련 타이머 이슈 <a href="https://github.com/nodejs/node/pull/1330" target="_blank" rel="external">#1330</a>와 함께, 타이머가 참조되었을 때의 자잘한 메모리 누수가 수정되었습니다.(Fedor Indutny) 이 이슈는 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>에 보고되었던 누수도 수정한 것으로 보입니다.</li>
+<li><strong>android</strong>: 이제 안드로이드와 관련 장비에서 io.js를 컴파일할 수 있습니다. <a href="https://github.com/nodejs/node/pull/1307" target="_blank" rel="external">#1307</a>(Giovanny Andres Gongora Granada)</li>
+</ul>
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+-->
+<ul>
+<li>참조되지 않은 타이머가 <code>beforeExit</code>에서 실행될 때 발생하는 일부 문제는 여전히 처리되어야 합니다. <a href="https://github.com/nodejs/node/issues/1264" target="_blank" rel="external">#1264</a>를 참조하세요.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li>io.js를 정적 라이브러리로 빌드할 수 없습니다. <a href="https://github.com/nodejs/node/issues/686" target="_blank" rel="external">#686</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 회귀는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 크래시가 발생할 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+</ul>
+<h3 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h3><!--
+* Node Foundation dev policy draft is [here](https://github.com/jasnell/dev-policy)
+* ARMv8 / ARM64 [support](https://twitter.com/rvagg/status/586050873349939201) on io.js
+* Continued work on a new dev policy for [node.js/io.js](https://github.com/jasnell/dev-policy)
+* TC call from [Wednesday](https://www.youtube.com/watch?v=OjlK8k10oyo)
+-->
+<ul>
+<li>Node 재단의 개발 방침 초안을 <a href="https://github.com/jasnell/dev-policy" target="_blank" rel="external">여기</a>에서 볼 수 있습니다.</li>
+<li>io.js에서 ARMv8 / ARM64를 <a href="https://twitter.com/rvagg/status/586050873349939201" target="_blank" rel="external">지원</a>합니다.</li>
+<li><a href="https://github.com/jasnell/dev-policy" target="_blank" rel="external">node.js/io.js</a>의 새로운 개발 방침을 작성 중입니다.</li>
+<li><a href="https://www.youtube.com/watch?v=OjlK8k10oyo" target="_blank" rel="external">수요일</a>에 TC 미팅이 있었습니다.</li>
+</ul>
+<h3 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h3><!--
+* [JSConf Uruguay](http://jsconf.uy) tickets are on sale, April 24th & 25th at Montevideo, Uruguay
+* [NodeConf Adventure](http://nodeconf.com/) tickets are on sale, June 11th - 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
+* [nodeSchool Tokyo](http://nodejs.connpass.com/event/13182/) will be held in April 12th at Tokyo, Japan
+-->
+<ul>
+<li><a href="http://jsconf.uy" target="_blank" rel="external">JSConf Uruguay</a> 입장권을 판매하고 있습니다. 4월 24일과 25일, 우르과이 몬테비데오에서 열립니다.</li>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf</a> 입장권을 판매하고 있습니다. 6월 8일과 9일, 캘리포니아 오클랜드에서 열리며, NodeConf Adventure는 6월 11일~14일, 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일~10일, 워싱턴주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 입장권을 판매하고 있습니다. 9월 6일~9일, 아일랜드 워터퍼드에서 열립니다.</li>
+<li><a href="http://nodejs.connpass.com/event/13182/" target="_blank" rel="external">nodeSchool tokyo</a>가 4월 12일 일본의 도쿄에서 개최될 예정입니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/04/10/weekly/" data-id="cixcwcvll000u3rqkkz8mte5r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/04/03/weekly/" class="article-date">
+    <time datetime="2015-04-03T00:00:00.000Z" itemprop="datePublished">2015-04-03</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/04/03/weekly/">io.js 주간 뉴스 2015년 4월 3일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-april-3rd-a4e1fe0c38c1" taret="_blank">
+        io.js Week of April 3rd
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/outsideris" target="_blank">Outsider</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+io.js 1.6.3 release, internal modules, and reconciliation progress
+-->
+<p>io.js 1.6.3 릴리스, 내부 모듈, 화해 진행</p>
+<!--
+# v1.6.3 Release
+This week we had one io.js release [v1.6.3](https://iojs.org/dist/v1.6.3/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<h1 id="v1-6-3-릴리스"><a href="#v1-6-3-릴리스" class="headerlink" title="v1.6.3 릴리스"></a>v1.6.3 릴리스</h1><p>이번 주에는 io.js <a href="https://iojs.org/dist/v1.6.3/" target="_blank" rel="external">v1.6.3</a> 릴리스가 있었습니다. <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub</a>에서 전체 변경사항을 볼 수 있습니다.</p>
+<!--
+### Notable changes
+-->
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* **fs**: corruption can be caused by `fs.writeFileSync()` and append-mode `fs.writeFile()` and `fs.writeFileSync()` under certain circumstances, reported in [#1058](https://github.com/nodejs/node/issues/1058), fixed in [#1063](https://github.com/nodejs/node/pull/1063) (Olov Lassus).
+* **iojs**: an "internal modules" API has been introduced to allow core code to share JavaScript modules internally only without having to expose them as a public API, this feature is for core-only [#848](https://github.com/nodejs/node/pull/848) (Vladimir Kurchatkin).
+* **timers**: two minor problems with timers have been fixed:
+  - `Timer.close()` is now properly idempotent [#1288](https://github.com/nodejs/node/issues/1288) (Petka Antonov).
+  - `setTimeout()` will only run the callback once now after an `unref()` during the callback [#1231](https://github.com/nodejs/node/pull/1231) (Roman Reiss).
+  - NOTE: there are still other unresolved concerns with the timers code, such as [#1152](https://github.com/nodejs/node/pull/1152).
+* **Windows**: a "delay-load hook" has been added for compiled add-ons on Windows that should alleviate some of the problems that Windows users may be experiencing with add-ons in io.js [#1251](https://github.com/nodejs/node/pull/1251) (Bert Belder).
+* **V8**: minor bug-fix upgrade for V8 to 4.1.0.27.
+* **npm**: upgrade npm to 2.7.4. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v274-2015-03-20) for details.
+-->
+<ul>
+<li><strong>fs</strong>: 특정 상황에서 <code>fs.writeFileSync()</code>, append 모드의 <code>fs.writeFile()</code>과 <code>fs.writeFileSync()</code>가 손상을 일으킬 수 있습니다. 이 이슈는 <a href="https://github.com/nodejs/node/issues/1058" target="_blank" rel="external">#1058</a>에서 보고돼서 <a href="https://github.com/nodejs/node/pull/1063" target="_blank" rel="external">#1063</a>에서 수정했습니다. (Olov Lassus)</li>
+<li><strong>iojs</strong>: 핵심 코드를 공개 API로 노출하지 않고 내부적으로만 JavaScript 모듈에 공유할 수 있도록 내부 모듈(internal modules) API를 도입했습니다. 이 기능은 핵심 코드에서만 사용합니다. <a href="https://github.com/nodejs/node/pull/848" target="_blank" rel="external">#848</a> (Vladimir Kurchatkin)</li>
+<li><strong>timers</strong>: timers와 관련된 사소한 두 가지 문제를 수정했습니다.<ul>
+<li><code>Timer.close()</code>는 이제 적절하게 멱등입니다. <a href="https://github.com/nodejs/node/issues/1288" target="_blank" rel="external">#1288</a> (Petka Antonov).</li>
+<li><code>setTimeout()</code>는 콜백에서 <code>unref()</code> 이후 딱 한 번만 콜백을 실행할 것입니다. <a href="https://github.com/nodejs/node/pull/1231" target="_blank" rel="external">#1231</a> (Roman Reiss).</li>
+<li>NOTE: <a href="https://github.com/nodejs/node/pull/1152" target="_blank" rel="external">#1152</a>처럼 timers 코드와 관련된 해결되지 않은 이슈들도 있습니다.</li>
+</ul>
+</li>
+<li><strong>Windows</strong>: 윈도우에서 컴파일된 애드온을 위해 “지연 로딩 훅(delay-load hook)”을 추가해서 윈도우 사용자가 io.js의 애드온에서 경험할 수 있는 일부 문제를 줄일 것입니다. <a href="https://github.com/nodejs/node/pull/1251" target="_blank" rel="external">#1251</a> (Bert Belder)</li>
+<li><strong>V8</strong>: V8을 4.1.0.27로 업데이트해서 사소한 버그들이 수정되었습니다.</li>
+<li><strong>npm</strong>: npm을 2.7.4로 업그레이드했습니다. 자세한 내용은 <a href="https://github.com/npm/npm/blob/master/CHANGELOG.md#v274-2015-03-20" target="_blank" rel="external">npm CHANGELOG.md</a> 를 참조하세요.</li>
+</ul>
+<!--
+### Known issues
+-->
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Some problems exist with timers and `unref()` still to be resolved. See [#1152](https://github.com/nodejs/node/pull/1152).
+* Possible small memory leak(s) may still exist but have yet to be properly identified, details at [#1075](https://github.com/nodejs/node/issues/1075).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+-->
+<ul>
+<li>timers와 <code>unref()</code>에서 발생하는 일부 문제는 여전히 처리되어야 합니다. <a href="https://github.com/nodejs/node/pull/1152" target="_blank" rel="external">#1152</a>를 참조하세요.</li>
+<li>원인을 아직 알 수 없는 미미한 메모리 누수가 있을 수 있습니다. 자세한 사항은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>를 참조하세요.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li>io.js를 정적 라이브러리로 빌드할 수 없습니다. <a href="https://github.com/nodejs/node/issues/686" target="_blank" rel="external">#686</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 회귀는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 크래시가 발생할 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+</ul>
+<!--
+### Community Updates
+-->
+<h3 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h3><!--
+* [Scaleway](https://www.scaleway.com/) provides some ARM resources for the iojs test/build infrastructure.
+* New post on Medium about Node.js reconciliation: [Help us reconcile node.js and io.js](https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4)
+* Added support for iojs in [Reactive-Extensions/RxJS](https://travis-ci.org/Reactive-Extensions/RxJS/builds/56671837)
+* [joyent/nodejs-advisory-board#30](https://github.com/joyent/nodejs-advisory-board/pull/30) merged
+* Mikeal Rogers working on reconciling Project Lifecycle and WG [joyent/nodejs-advisory-board#33](https://github.com/joyent/nodejs-advisory-board/pull/33)
+* Rod Vagg opened the discussion forum about Node.js reconciliation in [iojs/io.js#1336](https://github.com/nodejs/node/issues/1336)
+-->
+<ul>
+<li><a href="https://www.scaleway.com/" target="_blank" rel="external">Scaleway</a>가 iojs 테스트/빌드 인프라에 ARM 자원을 제공했습니다.</li>
+<li>Node.js 화해에 대한 새 글을 Medium에 등록했습니다. <a href="https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4" target="_blank" rel="external">Help us reconcile node.js and io.js</a></li>
+<li><a href="https://travis-ci.org/Reactive-Extensions/RxJS/builds/56671837" target="_blank" rel="external">Reactive-Extensions/RxJS</a>가 iojs를 지원합니다.</li>
+<li><a href="https://github.com/joyent/nodejs-advisory-board/pull/30" target="_blank" rel="external">joyent/nodejs-advisory-board#30</a>이 머지되었습니다.</li>
+<li>Mikeal Rogers가 프로젝트 생명주기와 WG <a href="https://github.com/joyent/nodejs-advisory-board/pull/33" target="_blank" rel="external">joyent/nodejs-advisory-board#33</a>의 화해를 진행 중입니다.</li>
+<li>Rod Vagg가 <a href="https://github.com/nodejs/node/issues/1336" target="_blank" rel="external">iojs/io.js#1336</a>에서 Node.js 화해에 대한 토론을 시작했습니다.</li>
+</ul>
+<!--
+### Upcoming Events
+-->
+<h3 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h3><!--
+* [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
+* [nodeSchool tokyo](http://nodejs.connpass.com/event/13182/) will be held in April 12th at Tokyo, Japan
+-->
+<ul>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf</a> 입장권을 판매하고 있습니다. 6월 8일과 9일, 캘리포니아 오클랜드에서 열리며, NodeConf Adventure는 6월 11일~14일, 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일~10일, 워싱턴주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 입장권을 판매하고 있습니다. 9월 6일~9일, 아일랜드 워터퍼드에서 열립니다.</li>
+<li><a href="http://nodejs.connpass.com/event/13182/" target="_blank" rel="external">nodeSchool tokyo</a>가 4월 12일 일본의 도쿄에서 개최될 예정입니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/04/03/weekly/" data-id="cixcwcvli000s3rqkl9f6h0wi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-help-us-reconcile-node-js-and-io-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/articles/2015/04/02/help-us-reconcile-node-js-and-io-js/" class="article-date">
+    <time datetime="2015-04-02T00:00:00.000Z" itemprop="datePublished">2015-04-02</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/articles/">articles</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/articles/2015/04/02/help-us-reconcile-node-js-and-io-js/">node.js와 io.js가 손잡을 수 있도록 도와주세요.</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>mikeal</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4" taret="_blank">
+        Help us reconcile node.js and io.js — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/harryoh" target="_blank">Harry Oh</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+# Help us reconcile node.js and io.js
+We’re closer than ever to coming together but we need your help.
+
+For the last few weeks people from the Linux Foundation, node.js and io.js have been working to draft an open governance structure that can reconcile the projects and working groups together in the new Node.js Foundation. We have now entered a critical period of community review and iteration.
+
+I’ll lay out the relevant documents and links here. Please comment on these issues where appropriate and propose new Pull Requests to the documents.
+-->
+<h1 id="node-js와-io-js가-손잡을-수-있도록-도와주세요"><a href="#node-js와-io-js가-손잡을-수-있도록-도와주세요" class="headerlink" title="node.js와 io.js가 손잡을 수 있도록 도와주세요."></a>node.js와 io.js가 손잡을 수 있도록 도와주세요.</h1><p>우리는 서로 어느 때보다도 더 가까워졌지만, 당신의 도움이 필요합니다.</p>
+<p>지난 몇 주간 리눅스 재단 사람들과 Node.js 그리고 io.js는 프로젝트들과 작업그룹들이 서로 조화로울 수 있는 개방된 관리 체계 구조의 초안을 작성해 왔습니다. 현재는 그 내용을 검토하는 중요한 단계에 와 있습니다.</p>
+<p>저는 그와 관련된 문서를 만들고 이곳에 링크할 것입니다. 적절한 이슈에 의견을 적어주시고 그 문서에 새로운 풀 리퀘스트도 제안해 주시기를 부탁합니다.</p>
+<!--
+# Project Lifecycle
+The Foundation must include provisions for more projects than just core. Today, io.js alone has around 50 Working Groups with around 300 members across those groups. This document will define the structure those Working Groups would operate under.
+
+In io.js we have no resources (money, legal, etc) and so we could be very liberal about spinning up new working groups and projects because it didn’t cost us anything. With a foundation there are resources afforded to each project and so it makes sense that the board would want more restrictions in place to protect those resources. However, much of io.js’ success has been in how liberally we’ve been able to break work out in to Working Groups so it’s going to take some work to strike this balance.
+
+I have a [Pull Request](https://github.com/joyent/nodejs-advisory-board/pull/33/) open for comment but it still needs quite a bit of work and additional feedback from the community.
+-->
+<h1 id="프로젝트-생명주기"><a href="#프로젝트-생명주기" class="headerlink" title="프로젝트 생명주기"></a>프로젝트 생명주기</h1><p>재단에서는 핵심만을 위한 규정보다는 프로젝트들에 관한 규정을 더 포함해야 합니다. 오늘날 io.js는 홀로 약 300여 명의 회원이 있는 50여 개의 작업그룹을 가지고 있습니다. 이 문서에 그 작업그룹들이 운영될 구조를 정의할 것입니다.</p>
+<p>io.js에서 우리는 아무런 자원(돈, 법률 등)을 갖지 않습니다. 비용이 들지 않기 때문에 우리는 새로운 작업그룹과 프로젝트들을 활성화하는 데에 매우 자유로울 수 있습니다. 보통 한 재단에서는 프로젝트별로 충당하는 자원이 있고 이사회는 이러한 자원을 보호하기 위해서 더 많은 제약을 요구하게 됩니다. 그러나 io.js의 성공은 많은 부분 아무 제약 없이 자유롭게 작업그룹 내에서 일을 쉴 수 있었다는 것에 기인합니다. 따라서 이 균형을 찾기 위한 작업이 좀 필요할 것입니다.</p>
+<p>의견수집을 위해 <a href="https://github.com/joyent/nodejs-advisory-board/pull/33/" target="_blank" rel="external">풀 리퀘스트</a>를 열었지만, 커뮤니티로부터 여전히 많은 작업과 추가적인 의견이 필요합니다.</p>
+<!--
+# TSC Charter
+The TSC (Technical Steering Committee) is the primary governance body of what would be a reconciled io.js/node.js platform. For those familiar with io.js this would be the new TC (Technical Committee) and would presumably adopt the existing io.js TC members as well as core committers from node.js
+
+[The TSC Charter](https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/TSC-Charter-Draft.md) will end up being approved by the board. That means that certain rights (like technical decision making autonomy from the foundation’s board) should be in it. Changing this document requires board approval which means that this document can be difficult to change once formalized.
+
+Unlike io.js where we have a mix of current TC process along with a solid governance structure in one document this charter should be as minimal as possible while also guaranteeing freedom and open governance. We want to continue to iterate on the TC process, as io.js has been for the last 4 months, and if we overload this document with the specifics of that process it will become quite difficult. We need help identifying areas and language improvements we can make in order to walk this line.
+-->
+<h1 id="기술-결정-위원회-TSC-협약"><a href="#기술-결정-위원회-TSC-협약" class="headerlink" title="기술 결정 위원회(TSC) 협약"></a>기술 결정 위원회(TSC) 협약</h1><p>기술 결정 위원회(Technical Steering Committe, TSC)는 단일화된 io.js와 node.js 플랫폼의 관리의 주요한 주체가 될 것입니다. io.js에 익숙한 사람들에게는 새로운 기술위원회가 될 것이며 아마도 node.js의 핵심 커미터들뿐만 아니라 기존의 io.js TC 회원들도 받아들이게 될 것입니다.</p>
+<p><a href="https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/TSC-Charter-Draft.md" target="_blank" rel="external">기술 결정 위원회 협약</a>은 결국 이사회의 승인을 받게 될 것입니다. 그것은 특정한 권리(재단 이사회로부터 기술적인 의사결정의 자율성과 같은)가 그 안에 있어야 한다는 것을 의미합니다. 이 문서의 수정을 위해서는 이사회의 승인이 필요한데 이는 한번 공식화되면 변경이 어렵다는 것을 의미합니다.</p>
+<p>하나의 문서에 견고한 관리체계와 함께 현재의 TC 프로세스가 혼재되어있는 io.js와는 달리, 이 협약은 자유와 개방된 관리를 보장하는 동시에 가능한 최소한의 내용을 포함해야 합니다. 우리는 io.js가 지난 4개월간 해왔던 것처럼 TC 프로세스를 계속 반복하길 원합니다. 그리고 우리가 이 문서에 프로세스와 관련된 세세한 규정을 지나치게 많이 담는다면, 그것은 꽤 곤란하게 될 것입니다. 우리는 이 선을 지키기 위해 지역의 식별과 언어를 개선하는 데 도움이 필요합니다.</p>
+<!--
+# TSC Policy Draft
+[This document](https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/TSC-Policy-Draft.md) is what the Foundation’s Board of Directors will ratify as the direction, values, and scope of what the TSC is doing.
+
+In the foundation model that is being created there is a wall between the “Foundation,” governed by the Board of Directors and appointed executives, and the “Project(s)” which are governed by the TSC. This document describes what the board is granting, with some direction and requirements (like openness) to the TSC.
+
+Certain matters are not left to the TSC (like legal issues) and are handled by the Foundation so they are not included in this document.
+-->
+<h1 id="기술-결정-위원회-정책-초안"><a href="#기술-결정-위원회-정책-초안" class="headerlink" title="기술 결정 위원회 정책 초안"></a>기술 결정 위원회 정책 초안</h1><p><a href="https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/TSC-Policy-Draft.md" target="_blank" rel="external">이 문서</a>에서 재단 이사회가 기술 결정 위원회가 할 방향과 가치 그리고 범위를 비준할 것입니다.</p>
+<p>거기서 만들어진 재단의 모델에는 이사회와 선임된 경영진에 의해서 관리되는 “재단”과 기술 결정 위원회에 의해 관리되는 “프로젝트” 사이에 벽이 있습니다. 이 문서는 이사회가 기술 결정 위원회에게 인정해주는 부분, 그리고 기술 결정 위원회 방향성과 요구사항(개방성 같은)들을 서술합니다.</p>
+<p>일부 문제(법적인 문제 등)는 기술 결정 위원회에게 남아있지 않고 재단에 의해 다루어지므로 이 문서에 포함되지 않습니다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/articles/2015/04/02/help-us-reconcile-node-js-and-io-js/" data-id="cixcwcvle000q3rqk07tjqynh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/03/27/weekly/" class="article-date">
+    <time datetime="2015-03-27T00:00:00.000Z" itemprop="datePublished">2015-03-27</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/03/27/weekly/">io.js 주간 뉴스 2015년 3월 27일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-march-27th-9555f36bbb9a" taret="_blank">
+        io.js Week of March 27th — Node &amp;amp; JavaScript
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/marocchino" target="_blank">marocchino</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="io-js-1-6-2-릴리스"><a href="#io-js-1-6-2-릴리스" class="headerlink" title="io.js 1.6.2 릴리스"></a>io.js 1.6.2 릴리스</h1><!--
+This week we had one io.js releases [v1.6.2](https://iojs.org/dist/v1.6.2/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<p>이번 주에는 <a href="https://iojs.org/dist/v1.6.2/" target="_blank" rel="external">v1.6.2</a> 릴리스가 있었습니다. <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub</a>에서 전체 변경사항을 볼 수 있습니다.</p>
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><h4 id="1-6-2"><a href="#1-6-2" class="headerlink" title="1.6.2"></a>1.6.2</h4><!--
+* **Windows**: The ongoing work in improving the state of Windows support has resulted in full test suite passes once again. As noted in the release notes for v1.4.2, CI system and configuration problems prevented it from properly reporting problems with the Windows tests, the problems with the CI and the codebase appear to have been fully resolved.
+* **FreeBSD**: A [kernel bug](https://lists.freebsd.org/pipermail/freebsd-current/2015-March/055043.html) impacting io.js/Node.js was [discovered](https://github.com/joyent/node/issues/9326) and a patch has been introduced to prevent it causing problems for io.js (Fedor Indutny) [#1218](https://github.com/nodejs/node/pull/1218).
+* **module**: you can now `require('.')` instead of having to `require('./')`, this is considered a bugfix (Michaël Zasso) [#1185](https://github.com/nodejs/node/pull/1185).
+* **v8**: updated to 4.1.0.25 including patches for `--max_old_space_size` values above `4096` and Solaris support, both of which are already included in io.js.
+-->
+<ul>
+<li><strong>Windows</strong>: Windows 지원 상태의 개선작업으로 전체 테스트를 다시 통과하게 되었습니다. v1.4.2의 릴리스 노트에서 언급했듯이, CI 시스템과 설정이 Windows 테스트의 바른 문제 보고를 방해하던 문제와 CI와 코드베이스의 문제는 완전히 해결된 것으로 보입니다.</li>
+<li><strong>FreeBSD</strong>: io.js/Node.js에 영향을 주는 <a href="https://lists.freebsd.org/pipermail/freebsd-current/2015-March/055043.html" target="_blank" rel="external">커널 버그</a>가 <a href="https://github.com/joyent/node/issues/9326" target="_blank" rel="external">발견</a>되어 io.js에서 이 문제가 일어나지 않도록 수정했습니다.(Fedor Indutny) <a href="https://github.com/nodejs/node/pull/1218" target="_blank" rel="external">#1218</a>.</li>
+<li><strong>module</strong>: 이제 <code>require(&#39;./&#39;)</code> 대신 <code>require(&#39;.&#39;)</code>를 사용할 수 있습니다. 이 변경은 버그 수정으로 간주합니다.(Michaël Zasso) <a href="https://github.com/nodejs/node/pull/1185" target="_blank" rel="external">#1185</a>.</li>
+<li><strong>v8</strong>: 4.1.0.25로 업데이트 했습니다. 여기에는 <code>--max_old_space_size</code>에 <code>4096</code>을 넘는 값을 사용한 경우 발생하는 문제의 수정사항과 Solaris 지원이 들어있습니다. 언급된 수정은 이미 io.js에 포함되어 있습니다.</li>
+</ul>
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Possible small memory leak(s) may still exist but have yet to be properly identified, details at [#1075](https://github.com/nodejs/node/issues/1075).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+-->
+<ul>
+<li>원인을 아직 알 수 없는 미미한 메모리 누수가 있을 수 있습니다. 자세한 사항은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>를 참조하세요.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li>io.js를 정적 라이브러리로 빌드할 수 없습니다. <a href="https://github.com/nodejs/node/issues/686" target="_blank" rel="external">#686</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 회귀는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 크래시가 발생할 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+</ul>
+<h1 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h1><!--
+* Node.js Technical Governance Draft is proposed, you can check the draft [here](https://github.com/joyent/nodejs-advisory-board/pull/30)
+* Microsoft Visual Studio team releases Node.js Tools 1.0 for Visual Studio, the release includes rich editor, code completions, interactive window, advanced debugging and profiling. Check [the announcement](http://blogs.msdn.com/b/visualstudio/archive/2015/03/25/node-js-tools-1-0-for-visual-studio.aspx).
+* [SPM monitor supports node.js and io.js](http://blog.sematext.com/2015/03/30/nodejs-iojs-monitoring/), the monitor adds performance monitoring, alerting, and anomaly detection.
+-->
+<ul>
+<li>Node.js Technical Governance 초안이 제안되었습니다. <a href="https://github.com/joyent/nodejs-advisory-board/pull/30" target="_blank" rel="external">여기</a>에서 초안을 확인하실 수 있습니다.</li>
+<li>Microsoft Visual Studio 팀이 Visual Studio를 위한 Node.js Tools 1.0을 릴리스 했습니다. 이 릴리스에는 리치 에디터, 코드 자동완성, 대화형 윈도우, 고급 디버깅과 프로파일링이 포함됩니다. <a href="http://blogs.msdn.com/b/visualstudio/archive/2015/03/25/node-js-tools-1-0-for-visual-studio.aspx" target="_blank" rel="external">공지</a>를 읽어보세요.</li>
+<li><a href="http://blog.sematext.com/2015/03/30/nodejs-iojs-monitoring/" target="_blank" rel="external">node.js, io.js SPM 모니터 지원</a>, 모니터에 성능 모니터링, 경고 및 이상 탐지를 추가합니다.</li>
+</ul>
+<h1 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h1><!--
+* [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
+* [nodeSchool tokyo](http://nodejs.connpass.com/event/13182/) will be held in April 12th at Tokyo, Japan
+-->
+<ul>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf</a> 입장권을 판매하고 있습니다. 6월 8일과 9일, 캘리포니아 오클랜드에서 열리며, NodeConf Adventure는 6월 11일~14일, 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일~10일, 워싱턴주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 입장권을 판매하고 있습니다. 9월 6일~9일, 아일랜드 워터퍼드에서 열립니다.</li>
+<li><a href="http://nodejs.connpass.com/event/13182/" target="_blank" rel="external">nodeSchool tokyo</a>가 4월 12일 일본의 도쿄에서 개최될 예정입니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/03/27/weekly/" data-id="cixcwcvl5000o3rqkfv88qus2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/03/20/weekly/" class="article-date">
+    <time datetime="2015-03-20T00:00:00.000Z" itemprop="datePublished">2015-03-20</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/03/20/weekly/">io.js 주간 뉴스 2015년 3월 20일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/@iojs/io-js-1-6-release-1df38cf64e6c" taret="_blank">
+        io.js Week of March 20th
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/outsideris" target="_blank">Outsider</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--
+# io.js 1.6 release
+This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) and  [v1.6.0](https://iojs.org/dist/v1.6.0/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<h1 id="io-js-1-6-릴리스"><a href="#io-js-1-6-릴리스" class="headerlink" title="io.js 1.6 릴리스"></a>io.js 1.6 릴리스</h1><p>이번 주에는 <a href="https://iojs.org/dist/v1.6.1/" target="_blank" rel="external">v1.6.1</a>과 <a href="https://iojs.org/dist/v1.6.0/" target="_blank" rel="external">v1.6.0</a> 두 번의 릴리스가 있었습니다. <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub</a>에서 전체 변경사항을 볼 수 있습니다.</p>
+<!--
+### Notable changes
+-->
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* **path**: New type-checking on `path.resolve()` [#1153](https://github.com/nodejs/node/pull/1153) uncovered some edge-cases being relied upon in the wild, most notably `path.dirname(undefined)`. Type-checking has been loosened for `path.dirname()`, `path.basename()`, and `path.extname()` (Colin Ihrig) [#1216](https://github.com/nodejs/node/pull/1216).
+* **querystring**: Internal optimizations in `querystring.parse()` and `querystring.stringify()` [#847](https://github.com/nodejs/node/pull/847) prevented `Number` literals from being properly converted via `querystring.escape()` [#1208](https://github.com/nodejs/node/issues/1208), exposing a blind-spot in the test suite. The bug and the tests have now been fixed (Jeremiah Senkpiel) [#1213](https://github.com/nodejs/node/pull/1213).
+-->
+<ul>
+<li><strong>path</strong>: <code>path.resolve()</code> <a href="https://github.com/nodejs/node/pull/1153" target="_blank" rel="external">#1153</a>의 새로운 타입 검사는
+실무에서 발생하는 일부 경계조건(특히 <code>path.dirname(undefined)</code>)은 다루지 않습니다. <code>path.dirname()</code>, <code>path.basename()</code>, <code>path.extname()</code>의 타입 검사가 느슨해졌습니다. (Colin Ihrig) <a href="https://github.com/nodejs/node/pull/1216" target="_blank" rel="external">#1216</a>.</li>
+<li><strong>querystring</strong>: <code>querystring.parse()</code>와 <code>querystring.stringify()</code>의 내부 최적화(<a href="https://github.com/nodejs/node/pull/847" target="_blank" rel="external">#847</a>)에서 <code>querystring.escape()</code>가 <code>Number</code> 리터럴을 적절하게 변환하지 못하는 문제가 있었습니다.(<a href="https://github.com/nodejs/node/issues/1208" target="_blank" rel="external">#1208</a>) 이는 테스트에서 발견하지 못한 것이지만 지금은 버그와 테스트를 수정했습니다. (Jeremiah Senkpiel) <a href="https://github.com/nodejs/node/pull/1213" target="_blank" rel="external">#1213</a>.</li>
+</ul>
+<h4 id="1-6-0"><a href="#1-6-0" class="headerlink" title="1.6.0"></a>1.6.0</h4><!--
+* **node**: a new `-r` or `--require` command-line option can be used to pre-load modules at start-up (Ali Ijaz Sheikh) [#881](https://github.com/nodejs/node/pull/881).
+* **querystring**: `parse()` and `stringify()` are now faster (Brian White) [#847](https://github.com/nodejs/node/pull/847).
+* **http**: the `http.ClientRequest#flush()` method has been deprecated and replaced with `http.ClientRequest#flushHeaders()` to match the same change now in Node.js v0.12 as per [joyent/node#9048](https://github.com/joyent/node/pull/9048) (Yosuke Furukawa) [#1156](https://github.com/nodejs/node/pull/1156).
+* **net**: allow `server.listen()` to accept a `String` option for `port`, e.g. `{ port: "1234" }`, to match the same option being accepted in `net.connect()` as of [joyent/node#9268](https://github.com/joyent/node/pull/9268) (Ben Noordhuis) [#1116](https://github.com/nodejs/node/pull/1116).
+* **tls**: further work on the reported memory leak although there appears to be a minor leak remaining for the use-case in question, track progress at [#1075](https://github.com/nodejs/node/issues/1075).
+* **v8**: backport a fix for an integer overflow when `--max_old_space_size` values above `4096` are used (Ben Noordhuis) [#1166](https://github.com/nodejs/node/pull/1166).
+* **platforms**: the io.js CI system now reports passes on **FreeBSD** and **SmartOS** (_Solaris_).
+* **npm**: upgrade npm to 2.7.1. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v271-2015-03-05) for details.
+-->
+<ul>
+<li><strong>node</strong>: 시작할 때 모듈을 미리 로드하기 위해 새로운 커맨드라인 옵션 <code>-r</code>이나 <code>--require</code>를 사용할 수 있습니다. (Ali Ijaz Sheikh) <a href="https://github.com/nodejs/node/pull/881" target="_blank" rel="external">#881</a></li>
+<li><strong>querystring</strong>: <code>parse()</code>와 <code>stringify()</code>가 더 빨라졌습니다. (Brian White) <a href="https://github.com/nodejs/node/pull/847" target="_blank" rel="external">#847</a></li>
+<li><strong>http</strong>: <a href="https://github.com/joyent/node/pull/9048" target="_blank" rel="external">joyent/node#9048</a>에 따라 Node.js v0.12에서 변경된 내용과 맞추려고 <code>http.ClientRequest#flush()</code> 메소드를 폐기하고 <code>http.ClientRequest#flushHeaders()</code>로 대체했습니다. (Yosuke Furukawa) <a href="https://github.com/nodejs/node/pull/1156" target="_blank" rel="external">#1156</a></li>
+<li><strong>net</strong>: <a href="https://github.com/joyent/node/pull/9268" target="_blank" rel="external">joyent/node#9268</a>에서 <code>net.connect()</code>가 받는 옵션과 같게 하려고 <code>server.listen()</code>이 <code>port</code>를 <code>String</code> 옵션으로 받을 수 있게 되었습니다. (예시: <code>{ port: &quot;1234&quot; }</code>) (Ben Noordhuis) <a href="https://github.com/nodejs/node/pull/1116" target="_blank" rel="external">#1116</a></li>
+<li><strong>tls</strong>: 아직 사용 사례를 논쟁 중인 사소한 누수이지만 보고된 메모리 누수에 대한 작업을 하고 있습니다. 진행사항은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>에서 볼 수 있습니다.</li>
+<li><strong>v8</strong>: <code>--max_old_space_size</code>에 <code>4096</code>을 넘는 값을 사용한 경우 발생하는 정수 오버플로에 대한 수정사항을 백포트했습니다. (Ben Noordhuis) <a href="https://github.com/nodejs/node/pull/1166" target="_blank" rel="external">#1166</a></li>
+<li><strong>platforms</strong>: io.js CI 시스템이 이제 <strong>FreeBSD</strong>와 <strong>SmartOS</strong>(<em>Solaris</em>)에서도 통과합니다.</li>
+<li><strong>npm</strong>: npm을 2.7.1로 업그레이드했습니다. 자세한 내용은 <a href="https://github.com/npm/npm/blob/master/CHANGELOG.md#v271-2015-03-05" target="_blank" rel="external">npm CHANGELOG.md</a>를 참조하세요.</li>
+</ul>
+<!--
+### Known Issues
+-->
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Possible remaining TLS-related memory leak(s), details at [#1075](https://github.com/nodejs/node/issues/1075).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+-->
+<ul>
+<li>TLS와 관련된 메모리 누수가 있을 수 있습니다. 자세한 사항은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>를 참조하세요.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li>io.js를 정적 라이브러리로 빌드할 수 없습니다. <a href="https://github.com/nodejs/node/issues/686" target="_blank" rel="external">#686</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 회귀는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 크래시가 발생할 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+</ul>
+<!--
+# Community Updates
+-->
+<h1 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h1><!--
+* browserify supports io.js, you can check the announcement [here](https://twitter.com/yosuke_furukawa/status/577150547850969088)
+* express.js added [support](https://github.com/strongloop/express/commit/165660811aa9ba5f3733a7b033894f3d9a9c5e60) to io.js
+* Over the last two weeks we got access to hardware from Joyent and upstreamed a patch to V8 so we got io.js building. After that we worked on passing tests for both [SmartOS](https://github.com/nodejs/build/pull/64) and [FreeBSD](https://github.com/nodejs/node/pull/1167) which as of two days ago now pass, this was thanks to the amazing work of the build team and [Johan Bergström](https://github.com/jbergstroem)
+* [Petka Antonov](https://github.com/petkaantonov) is proposing a workers implementation in io.js under an experimental flag, you can join the discussion [here](https://github.com/nodejs/node/pull/1159)
+* io.js [upgraded](https://github.com/nodejs/node/pull/1206) openssl to `1.0.1m`
+-->
+<ul>
+<li>browserify가 io.js를 지원합니다. <a href="https://twitter.com/yosuke_furukawa/status/577150547850969088" target="_blank" rel="external">여기서</a> 공지사항을 볼 수 있습니다.</li>
+<li>express.js가 io.js 지원을 추가했습니다.</li>
+<li>지난 두 주 사이에 Joyent의 하드웨어에 접근 권한을 얻고 V8에 패치를 올려서 io.js를 빌드할 수 있게 되었습니다. <a href="https://github.com/nodejs/build/pull/64" target="_blank" rel="external">SmartOS</a>와 <a href="https://github.com/nodejs/node/pull/1167" target="_blank" rel="external">FreeBSD</a>에서 테스트를 통과하도록 작업한 결과 이틀 전부터 테스트를 통과하게 되었습니다. 이는 빌드 팀과 <a href="https://github.com/jbergstroem" target="_blank" rel="external">Johan Bergström</a>의 놀라운 작업 덕분입니다.</li>
+<li><a href="https://github.com/petkaantonov" target="_blank" rel="external">Petka Antonov</a>가 실험적으로 io.js에서 워커 구현체를 제안하고 있습니다. <a href="https://github.com/nodejs/node/pull/1159" target="_blank" rel="external">여기서</a> 이에 대한 논의에 참여할 수 있습니다.</li>
+<li>io.js는 openssl을 <code>1.0.1m</code>으로 <a href="https://github.com/nodejs/node/pull/1206" target="_blank" rel="external">업그레이드</a>했습니다.</li>
+</ul>
+<!--
+# Upcoming Events
+-->
+<h1 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h1><!--
+* [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
+-->
+<ul>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf</a> 입장권을 판매하고 있습니다. 6월 8일과 9일, 캘리포니아 오클랜드에서 열리며, NodeConf Adventure는 6월 11일~14일, 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일~10일, 워싱턴주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 입장권을 판매하고 있습니다. 9월 6일~9일, 아일랜드 워터퍼드에서 열립니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/03/20/weekly/" data-id="cixcwcvky000m3rqkxye4zzgi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-weekly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  <a href="/nodejs-ko/weekly/2015/03/13/weekly/" class="article-date">
+    <time datetime="2015-03-13T00:00:00.000Z" itemprop="datePublished">2015-03-13</time>
+  </a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/nodejs-ko/categories/weekly/">weekly</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/nodejs-ko/weekly/2015/03/13/weekly/">io.js 주간 뉴스 2015년 3월 13일</a>
+    </h1>
+  
+  <ul>
+    <li>작성자: <strong>iojs</strong></li>
+    <li>
+      원문: <strong><a href="https://medium.com/node-js-javascript/io-js-week-of-march-13th-e3024cc66802" taret="_blank">
+        io.js Week of March 13th — io.js 1.5.1, community events and more
+      </a></strong>
+    </li>
+    <li>
+      번역:
+      
+        
+          <strong><a href="https://github.com/yous" target="_blank">yous</a></strong>
+        
+      
+    </li>
+  </ul>
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>io.js 1.5.1, 커뮤니티 이벤트 등</p>
+<!--
+# io.js 1.5.1 Release
+-->
+<h1 id="io-js-1-5-1-릴리스"><a href="#io-js-1-5-1-릴리스" class="headerlink" title="io.js 1.5.1 릴리스"></a>io.js 1.5.1 릴리스</h1><!--
+On Monday, March 9th, [@rvagg](https://github.com/rvagg) released io.js [v1.5.1](https://iojs.org/dist/v1.5.1/). The complete change log can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+-->
+<p>3월 9일 월요일, <a href="https://github.com/rvagg" target="_blank" rel="external">@rvagg</a>가 io.js <a href="https://iojs.org/dist/v1.5.1/" target="_blank" rel="external">v1.5.1</a>을 릴리스 했습니다. 모든 변경 내역은 <a href="https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md" target="_blank" rel="external">GitHub</a>에서 보실 수 있습니다.</p>
+<!--
+### Notable changes
+-->
+<h3 id="주요-변경-사항"><a href="#주요-변경-사항" class="headerlink" title="주요 변경 사항"></a>주요 변경 사항</h3><!--
+* **tls**: The reported TLS memory leak has been resolved via various commits in this release. Current testing indicated that there _may_ still be some leak problems. Track complete progress at [#1075](https://github.com/nodejs/node/issues/1075).
+* **http**: Fixed an error reported at [joyent/node#9348](https://github.com/joyent/node/issues/9348) and [npm/npm#7349](https://github.com/npm/npm/issues/7349). Pending data was not being fully read upon an `'error'` event leading to an assertion failure on `socket.destroy()`. (Fedor Indutny) [#1103](https://github.com/nodejs/node/pull/1103)
+-->
+<ul>
+<li><strong>tls</strong>: 제보된 TLS 메모리 누수 현상이 이번 릴리스의 여러 커밋에 걸쳐 해결되었습니다. 현재 테스트 결과에 따르면 아직 누수 문제가 <em>있을 수</em> 있습니다. 전체 진행 과정은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>에서 보실 수 있습니다.</li>
+<li><strong>http</strong>: <a href="https://github.com/joyent/node/issues/9348" target="_blank" rel="external">joyent/node#9348</a>과 <a href="https://github.com/npm/npm/issues/7349" target="_blank" rel="external">npm/npm#7349</a>에서 보고 된 에러를 고쳤습니다. <code>socket.destroy()</code>에서 <code>&#39;error&#39;</code> 이벤트가 단언문 실패를 일으키는 경우 전송되길 기다리던 데이터를 끝까지 읽지 못하고 있었습니다. (Fedor Indutny) <a href="https://github.com/nodejs/node/pull/1103" target="_blank" rel="external">#1103</a></li>
+</ul>
+<!--
+### Known issues
+-->
+<h3 id="알려진-이슈"><a href="#알려진-이슈" class="headerlink" title="알려진 이슈"></a>알려진 이슈</h3><!--
+* Possible remaining TLS-related memory leak(s), details at [#1075](https://github.com/nodejs/node/issues/1075).
+* Windows still reports some minor test failures and we are continuing to address all of these as a priority. See [#1005](https://github.com/nodejs/node/issues/1005).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
+-->
+<ul>
+<li>TLS와 관련된 메모리 누수가 있을 수 있습니다. 자세한 사항은 <a href="https://github.com/nodejs/node/issues/1075" target="_blank" rel="external">#1075</a>를 참조하세요.</li>
+<li>아직 윈도우에서 통과하지 못하는 사소한 테스트들이 있습니다. 저희는 이들을 우선적으로 처리하는 중입니다. <a href="https://github.com/nodejs/node/issues/1005" target="_blank" rel="external">#1005</a>를 확인해 보세요.</li>
+<li>대화형 셸에서 서러게이트 페어(Surrogate pair)가 터미널을 정지시킬 수 있습니다. <a href="https://github.com/nodejs/node/issues/690" target="_blank" rel="external">#690</a></li>
+<li>io.js를 정적 라이브러리로 빌드할 수 없습니다. <a href="https://github.com/nodejs/node/issues/686" target="_blank" rel="external">#686</a></li>
+<li><code>process.send()</code>는 문서에서 설명된 바와는 다르게 동기적이지 않습니다. 이 회귀는 1.0.2에서 발생했습니다. <a href="https://github.com/nodejs/node/issues/760" target="_blank" rel="external">#760</a>에서 확인 가능하며 <a href="https://github.com/nodejs/node/issues/774" target="_blank" rel="external">#774</a>에서 수정하고 있습니다.</li>
+<li>DNS 쿼리 중에 <code>dns.setServers()</code>를 호출하면 실패한 단언문 때문에 크래시가 발생할 수 있습니다. <a href="https://github.com/nodejs/node/issues/894" target="_blank" rel="external">#894</a></li>
+</ul>
+<!--
+# Community Updates
+-->
+<h1 id="커뮤니티-업데이트"><a href="#커뮤니티-업데이트" class="headerlink" title="커뮤니티 업데이트"></a>커뮤니티 업데이트</h1><!--
+* [Tony Pujals] (https://twitter.com/subfuzion) gave [the io.js roadmap presentation](http://roadmap.iojs.org/) to [BayNode](http://www.meetup.com/BayNode/events/220246228/). The video was posted to [vimeo](https://vimeo.com/121707989) on March 9. Slides are available for anyone to give at their [local meetup](ron.buell@rd.io).
+* [Johan Bergström](https://github.com/jbergstroem) is working on getting a patch into [V8](https://codereview.chromium.org/990063002) on behalf of io.js to bring Solaris support back into the latest version
+* [NodeUp Episode 84](http://nodeup.com/eightyfour) it's io.js update #1 with [Mikeal Rogers](https://github.com/mikeal), [Trevor Norris](https://github.com/trevnorris) and [Bradley Meck](https://github.com/bmeck)
+* [Mikeal Rogers](https://github.com/mikeal) was interviewed for [Descriptive](http://descriptive.audio) podcast on an episoded called [We've Never Had This Many Active Contributors to Core Before](http://descriptive.audio/episodes/12)
+* [Mark Wolfe](https://twitter.com/wolfeidau) gave a [talk about io.js](https://twitter.com/wolfeidau/status/575785856545378304) at [@melbjs](https://twitter.com/melbjs) meetup, slides are published [here](https://speakerdeck.com/wolfeidau/iojs-bringing-es6-to-the-node)
+* [dockeri.co](http://dockeri.co/) now runs on io.js, you can see the announcement [here](https://twitter.com/wjblankenship/status/575867637680369665)
+* [Node.js Advisory Board](https://nodejs.org/about/advisory-board/) are talking about the [io.js/Node.js reconciliation proposal](https://github.com/nodejs/node/issues/978), you can check the meeting minutes [here](https://github.com/joyent/nodejs-advisory-board/blob/master/meetings/2015-03-09/minutes.md#nodejsiojs-reconciliation-bb)
+-->
+<ul>
+<li><a href="https://twitter.com/subfuzion" target="_blank" rel="external">Tony Pujals</a>가 <a href="http://www.meetup.com/BayNode/events/220246228/" target="_blank" rel="external">BayNode</a>에서 <a href="http://roadmap.iojs.org/" target="_blank" rel="external">io.js 로드맵 프레젠테이션</a>을 발표했습니다. 이 발표 영상은 3월 9일 <a href="https://vimeo.com/121707989" target="_blank" rel="external">vimeo</a>에 올라왔습니다. 슬라이드는 지역 모임을 위해 누구나 <a href="ron.buell@rd.io">사용할 수 있습니다</a>.</li>
+<li><a href="https://github.com/jbergstroem" target="_blank" rel="external">Johan Bergström</a>은 io.js를 대표해 최신 버전에서 솔라리스를 다시 지원하도록 <a href="https://codereview.chromium.org/990063002" target="_blank" rel="external">V8</a>을 수정하고 있습니다.</li>
+<li><a href="http://nodeup.com/eightyfour" target="_blank" rel="external">NodeUp Episode 84</a>는 <a href="https://github.com/mikeal" target="_blank" rel="external">Mikeal Rogers</a>, <a href="https://github.com/trevnorris" target="_blank" rel="external">Trevor Norris</a>, <a href="https://github.com/bmeck" target="_blank" rel="external">Bradley Meck</a>과 함께한 io.js 업데이트 1편입니다.</li>
+<li><a href="https://github.com/mikeal" target="_blank" rel="external">Mikeal Rogers</a>가 팟캐스트 <a href="http://descriptive.audio" target="_blank" rel="external">Descriptive</a>의 <a href="http://descriptive.audio/episodes/12" target="_blank" rel="external">We’ve Never Had This Many Active Contributors to Core Before</a> 에피소드에서 인터뷰 했습니다.</li>
+<li><a href="https://twitter.com/wolfeidau" target="_blank" rel="external">Mark Wolfe</a>가 <a href="https://twitter.com/melbjs" target="_blank" rel="external">@melbjs</a> 모임에서 <a href="https://twitter.com/wolfeidau/status/575785856545378304" target="_blank" rel="external">io.js에 대해 발표</a>했고, 슬라이드는 <a href="https://speakerdeck.com/wolfeidau/iojs-bringing-es6-to-the-node" target="_blank" rel="external">여기</a>에 공개되었습니다.</li>
+<li><a href="http://dockeri.co/" target="_blank" rel="external">dockeri.co</a>는 이제 io.js 위에서 구동됩니다. 공지는 <a href="https://twitter.com/wjblankenship/status/575867637680369665" target="_blank" rel="external">여기</a>에서 보실 수 있습니다.</li>
+<li><a href="https://nodejs.org/about/advisory-board/" target="_blank" rel="external">Node.js 자문위원회</a>에서 <a href="https://github.com/nodejs/node/issues/978" target="_blank" rel="external">io.js/Node.js 화해 제안</a>에 대해 이야기하고 있습니다. <a href="https://github.com/joyent/nodejs-advisory-board/blob/master/meetings/2015-03-09/minutes.md#nodejsiojs-reconciliation-bb" target="_blank" rel="external">여기</a>에서 회의 시각을 확인하실 수 있습니다.</li>
+</ul>
+<!--
+# Upcoming Events
+-->
+<h1 id="다가오는-이벤트"><a href="#다가오는-이벤트" class="headerlink" title="다가오는 이벤트"></a>다가오는 이벤트</h1><!--
+* [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
+* [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State
+* [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
+-->
+<ul>
+<li><a href="http://nodeconf.com/" target="_blank" rel="external">NodeConf</a> 입장권을 판매하고 있습니다. 6월 8일과 9일, 캘리포니아 오클랜드에서 열리며, NodeConf Adventure는 6월 11일~14일, 캘리포니아 Walker Creek Ranch에서 열립니다.</li>
+<li><a href="http://2015.cascadiajs.com/" target="_blank" rel="external">CascadiaJS</a> 입장권을 판매하고 있습니다. 7월 8일~10일, 워싱턴주에서 열립니다.</li>
+<li><a href="http://nodeconf.eu/" target="_blank" rel="external">NodeConf EU</a> 입장권을 판매하고 있습니다. 9월 6일~9일, 아일랜드 워터퍼드에서 열립니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nodejs.github.io/nodejs-ko/nodejs-ko/weekly/2015/03/13/weekly/" data-id="cixcwcvkw000k3rqk18ukwlm4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/nodejs-ko/page/18/">&laquo; Prev</a><a class="page-number" href="/nodejs-ko/">1</a><span class="space">&hellip;</span><a class="page-number" href="/nodejs-ko/page/17/">17</a><a class="page-number" href="/nodejs-ko/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/nodejs-ko/page/20/">20</a><a class="extend next" rel="next" href="/nodejs-ko/page/20/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title">Menu</h3>
+  <div class="widget">
+    <ul class="category-list">
+      <li class="category-list-item">
+        <a href="/nodejs-ko/">Home</a>
+      </li>
+      <li class="category-list-item">
+        <a href="/nodejs-ko/CONTRIBUTING.html">번역 참여 가이드</a>
+      </li>
+      <li class="category-list-item">
+        <a href="/nodejs-ko/about.html">소개</a>
+      </li>
+      <li class="category-list-item">
+        <a href="/nodejs-ko/categories/articles">글 모음</a>
+      </li>
+      <li class="category-list-item">
+        <a href="/nodejs-ko/categories/weekly">주간 뉴스</a>
+      </li>
+      <li class="category-list-item">
+        <a href="/nodejs-ko/archives">보관함</a>
+      </li>
+      <li class="category-list-item">
+        <a href="https://github.com/nodejs/nodejs-ko" target="_blank">GitHub project</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  
+</aside>
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Node.js 한국어 번역팀<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/nodejs-ko/" class="mobile-nav-link">Home</a>
+  
+    <a href="/nodejs-ko/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/nodejs-ko/fancybox/jquery.fancybox.css">
+  <script src="/nodejs-ko/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/nodejs-ko/js/script.js"></script>
+
+  </div>
+</body>
+</html>
